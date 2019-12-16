@@ -61,50 +61,44 @@ experiences:
       time: 2019 - Present
       company: Innovatrics, Bratislava
       details: |
-        Describe your role here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-        pellentesque eu, pretium quis, sem. Nulla consequat massa quis
-        enim. Donec pede justo. Sed ut perspiciatis unde omnis iste natus
-        error sit voluptatem accusantium doloremque laudantium, totam rem
-        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-        architecto beatae vitae dicta sunt explicabo.
-          - Bullet point
-          - Bullet point
+        - 
     - role: Test Lead
       time: 2017 - 2018
       company: Box+Dice, Melbourne
       details: |
-        Describe your role here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-        pellentesque eu, pretium quis, sem.
-          - Bullet point
-          - Bullet point
+        I led small team of 4 testers. In this role I was focused on preparing 
+        different test plans to deliver release to the clients on time with as 
+        fewer bugs as possible, communication with testers through individual 
+        sessions, stand-ups or meetings, integrating testing into development 
+        process by following agile values and principles. 
     - role: Software Tester
       time: 2013 - 2017
       company: Box+Dice, Melbourne
       details: |
-        Describe your role here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-        pellentesque eu, pretium quis, sem.
-          - Bullet point
-          - Bullet point
+        - performed functional (exploratory, regression & smoke testing)
+          & non-functional testing, API testing, mobile testing
+          in CI environment
+        - worked closely with analysts & developers to make better solutions
+        - test scenarios creation & maintenance, test planning, bug reporting
+          & tracking, etc.
+        - executed the deployment process (migrations, sanitisation, etc.)
+          in both local & server environment
     - role: Software Tester
       time: 2012 - 2013
       company: Kedros, Bratislava
       details: |
-        Describe your role here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-        Cum sociis natoque penatibus et magnis dis parturient montes,
-        nascetur ridiculus mus. Donec quam felis, ultricies nec,
-        pellentesque eu, pretium quis, sem.
-          - Bullet point
-          - Bullet point
+        - study functional specifications (use cases) and understand
+          particular modules of the system (Customer management, Self-Care,
+          Dunning, Request Management, Configuration and Maintenance,
+          Billing, etc.)
+        - create test scenarios, execute test scenarios, bug reporting,
+          retesting already fixed bugs, participate in creating test plan,
+          perform the basic database operations, administration of application
+          server (basic operations, mostly done for getting the error logs
+          or for dunning module to simulate time shifting for production
+          simulation)
+        - communication with system architects, analysts, programmers, scrum
+          master(s) and managers
 education:
     - degree: MSc in Computer Science
       university: University of London
