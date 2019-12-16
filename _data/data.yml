@@ -28,6 +28,9 @@ sidebar:
       - idiom: English
         level: Professional working proficiency
 
+      - idiom: Czech
+        level: Full professional proficiency
+
       - idiom: Slovak
         level: Native proficiency
 
@@ -100,28 +103,18 @@ experiences:
         - communication with system architects, analysts, programmers, scrum
           master(s) and managers
 education:
-    - degree: MSc in Computer Science
-      university: University of London
-      time: 2011 - 2012
+    - degree: Upper Intermediate, English
+      university: New Horizon Collage of English in New Zealand
+      time: Jan 2011 - Apr 2011
       details: |
-        Describe your study here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-        pretium quis, sem.
-          - Bullet point
-          - Bullet point
-    - degree: BSc in Applied Mathematics
-      university: Bristol University
-      time: 2007 - 2011
+    - degree: Ing., Informatics
+      university: Slovak University of Technology
+      time: Sep 2006 - Jun 2008
       details: |
-        Describe your study here lorem ipsum dolor sit amet, consectetuer
-        adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
-        sociis natoque penatibus et magnis dis parturient montes, nascetur
-        ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
-        pretium quis, sem.
-          - Bullet point
-          - Bullet point
+    - degree: Bc., Informatics
+      university: University of St. Cyril and Methodius in Trnava
+      time: Sep 2003 - Jun 2006
+      details: |
 projects:
     title: Projects
     intro: >
