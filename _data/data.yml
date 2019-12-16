@@ -115,6 +115,10 @@ education:
       university: University of St. Cyril and Methodius in Trnava
       time: Sep 2003 - Jun 2006
       details: |
+certificates:
+    - title: ISTQB Certified Tester Foundation Level, License 297
+      time: Nov 2012
+      details: |
 projects:
     title: Projects
     intro: >
