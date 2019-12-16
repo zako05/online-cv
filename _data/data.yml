@@ -9,39 +9,42 @@ sidebar:
     # Profile information
     name: Michal Zak
     tagline: Software Tester
-    avatar: profile3.jpeg  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
-    email: hello@webjeda.com
-    phone: 012 345 6789
-    website: blog.webjeda.com #do not add http://
-    linkedin: alandoe
-    github: sharu725
+    email: michal.zak84@gmail.com
+    phone: +421 903 647 310
+    website: zakmichal.com #do not add http://
+    linkedin: zakmichal
+    github: zako05
     gitlab:
     bitbucket:
-    twitter: '@webjeda'
-    stack-overflow: # Number/Username, e.g. 123456/alandoe
+    twitter: '@zak_michal'
+    stack-overflow: 9822844/michalzak # Number/Username, e.g. 123456/alandoe
     codewars:
     goodreads: # Number-Username, e.g. 123456-alandoe
 
     languages:
       - idiom: English
-        level: Native
+        level: Professional working proficiency
 
-      - idiom: French
-        level: Professional
-
-      - idiom: Spanish
-        level: Professional
+      - idiom: Slovak
+        level: Native proficiency
 
     interests:
-      - item: Climbing
+      - item: Ice hockey
         link:
 
       - item: Snowboarding
         link:
 
-      - item: Cooking
+      - item: Squash
+        link:
+
+      - item: Travel
+        link:
+
+      - item: Test Automation
         link:
 
 career-profile:
