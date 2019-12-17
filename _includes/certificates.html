@@ -1,13 +1,12 @@
 {% assign certificates = site.data.data.certificates %}
 {% if certificates %}
 <section class="section certificates-section">
-
   <h2 class="section-title">
     <span class="fa-stack fa-xs">
       <i class="fas fa-circle fa-stack-2x"></i>
       <i class="fas fa-file-alt fa-stack-1x fa-inverse"></i>
     </span>
-    {{ certificates.title }}
+    Certificates
   </h2>
 
   {% for certificate in certificates %}
