@@ -118,6 +118,13 @@ education:
 certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
       time: Nov 2012
+conferences:
+    - title: Conference: SeleniumConfUK (https://ti.to/whiteoctober/seleniumconf-uk-2016)
+      time: Nov 2016
+    - title: Workshop: GettingStartedWithSelenium (https://ti.to/whiteoctober/seleniumconf-uk-2016)
+      time: Nov 2016
+    - title: Conference: WeAreDevelopers 2018 (https://www.wearedevelopers.com)
+      time: May 2018
 projects:
     title: Projects
     intro: >
@@ -129,7 +136,7 @@ projects:
         link: "#hook"
         tagline: "A responsive website template designed to help startups promote, market and sell their products."
 
-      - title: DevStudio
+       title: DevStudio
         link: "#"
         tagline: "A responsive website template designed to help web developers/designers market their services."
 
