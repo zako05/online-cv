@@ -119,7 +119,8 @@ certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
       time: Nov 2012
 conferences:
-    - title: SeleniumConfUK (https://ti.to/whiteoctober/seleniumconf-uk-2016)
+    - title: SeleniumConfUK
+      link: https://ti.to/whiteoctober/seleniumconf-uk-2016
       time: Nov 2016
     - title: GettingStartedWithSelenium (https://ti.to/whiteoctober/seleniumconf-uk-2016)
       time: Nov 2016
@@ -173,7 +174,6 @@ conferences:
 #         link: "#"
 #         authors: Edgar T. Irons
 #         conference: "Comm. ACM 4 (1961), 51–55"
-
 skills:
     title: Skills &amp; Proficiency
 
