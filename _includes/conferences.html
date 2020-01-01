@@ -17,16 +17,10 @@
       <div class="upper-row">
         <h3 class="conference-title">{{ conference.title }}</h3>
         <div class="time">{{ conference.time }}</div>
+        <div class="link"><i class="fas fa-globe"></i>
+          <a href="{{ conference.link }}" target="_blank">{{ conference.link }}</a>
+        </div>
       </div><!--//upper-row-->
-        
-      {% if confernce.link %}
-      <!-- <li class="link"><i class="fas fa&#45;globe"></i> -->
-      <!--   <a href="{{ conference.link }}" target="_blank">{{ conference.link }}</a> -->
-      <!-- </li> -->
-      <div class="link">
-        <a href="{{ conference.link }}" target="_blank">{{ conference.link }}</a>
-      </div>
-      {% endif %}
 
     </div><!--//meta-->
 

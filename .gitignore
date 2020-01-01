@@ -4,3 +4,5 @@ _site/
 .swp
 .DS_Store
 tags
+Gemfile
+Gemfile.lock
