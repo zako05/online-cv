@@ -191,9 +191,8 @@ p {
         font-weight: 500;
     }
     .link{
-        position: absolute;
-        left: 0;
-        top:0;
+        margin-bottom: 10px;
+        color: $text-color;
     }
     .time {
         position: absolute;

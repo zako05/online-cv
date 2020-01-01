@@ -122,9 +122,11 @@ conferences:
     - title: SeleniumConfUK
       link: https://ti.to/whiteoctober/seleniumconf-uk-2016
       time: Nov 2016
-    - title: GettingStartedWithSelenium (https://ti.to/whiteoctober/seleniumconf-uk-2016)
+    - title: GettingStartedWithSelenium
+      link: https://ti.to/whiteoctober/seleniumconf-uk-2016
       time: Nov 2016
-    - title: WeAreDevelopers 2018 (https://www.wearedevelopers.com)
+    - title: WeAreDevelopers 2018
+      link: https://www.wearedevelopers.com
       time: May 2018
 # projects:
 #     title: Projects
