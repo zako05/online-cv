@@ -142,15 +142,15 @@ p {
         }
     }
 
-    .interests-list {
-        margin-bottom: 0;
-        li {
-            margin-bottom: 10px;
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-    }
+    // .interests-list {
+    //     margin-bottom: 0;
+    //     li {
+    //         margin-bottom: 10px;
+    //         &:last-child {
+    //             margin-bottom: 0;
+    //         }
+    //     }
+    // }
 }
 
 .main-wrapper {
@@ -173,7 +173,8 @@ p {
     .experiences-section,
     .educations-section,
     .certificates-section,
-    .conferences-section {
+    .conferences-section
+    {
         .item {
             margin-bottom: 30px;
         }
