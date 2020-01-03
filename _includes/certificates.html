@@ -1,28 +1,45 @@
 {% assign certificates = site.data.data.certificates %}
 {% if certificates %}
-<section class="section certificates-section">
-  <h2 class="section-title">
-    <span class="fa-stack fa-xs">
-      <i class="fas fa-circle fa-stack-2x"></i>
-      <i class="fas fa-file-alt fa-stack-1x fa-inverse"></i>
-    </span>
-    Certificates
-  </h2>
+  {% if site.data.data.sidebar.certificates %}
+  <div class="certificates-container container-block">
 
-  {% for certificate in certificates %}
-  <div class="item">
+    <h2 class="container-block-title">
+      Certificates
+    </h2>
+    
+    {% for certificate in certificates %}
+    <div class="item">
+      <h5 class="certificate-title">{{ certificate.title }}</h3>
+      <div class="time">{{ certificate.time }}</div>
+    </div><!--//item-->
+    {% endfor %}
 
-    <div class="meta">
-
-      <div class="upper-row">
-        <h3 class="certificate-title">{{ certificate.title }}</h3>
-        <div class="time">{{ certificate.time }}</div>
-      </div><!--//upper-row-->
-
-    </div><!--//meta-->
-
-  </div><!--//item-->
-  {% endfor %}
-
-</section><!--//section-->
+  </div><!--//education-container-->
+  {% else %}
+  <section class="section certificates-section">
+    <h2 class="section-title">
+      <span class="fa-stack fa-xs">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-file-alt fa-stack-1x fa-inverse"></i>
+      </span>
+      Certificates
+    </h2>
+  
+    {% for certificate in certificates %}
+    <div class="item">
+  
+      <div class="meta">
+  
+        <div class="upper-row">
+          <h3 class="certificate-title">{{ certificate.title }}</h3>
+          <div class="time">{{ certificate.time }}</div>
+        </div><!--//upper-row-->
+  
+      </div><!--//meta-->
+  
+    </div><!--//item-->
+    {% endfor %}
+  
+  </section><!--//section-->
+  {% endif %}
 {% endif %}

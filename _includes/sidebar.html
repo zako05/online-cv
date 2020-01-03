@@ -19,12 +19,20 @@
   </div><!--//profile-container-->
 
   {% include contact.html %}
+  
+  {% if sidebar.certificates %}
+    {% include certificates.html %}
+  {% endif %}
 
   {% if sidebar.education %}
     {% include education.html %}
   {% endif %}
 
   {% include language.html %}
+
+  {% if sidebar.skills %}
+    {%include skills.html%}
+  {% endif %}
 
   {% if sidebar.about %}
     {% include about.html %}

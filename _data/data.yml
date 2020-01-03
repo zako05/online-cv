@@ -4,7 +4,9 @@
 
 sidebar:
     about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
-    education: False # set to False if you want education in main section instead of in sidebar
+    education: True # set to False if you want education in main section instead of in sidebar
+    certificates: True
+    skills: False
 
     # Profile information
     name: Michal Zak
@@ -17,12 +19,9 @@ sidebar:
     website: zakmichal.com #do not add http://
     linkedin: zakmichal
     github: zako05
-    gitlab:
-    bitbucket:
     twitter: '@zak_michal'
     stack-overflow: 9822844/michalzak # Number/Username, e.g. 123456/alandoe
-    codewars:
-    goodreads: # Number-Username, e.g. 123456-alandoe
+    tau: zakmichal
 
     languages:
       - idiom: English
@@ -173,23 +172,68 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: Python & Django
-        level: 98%
-
-      - name: Javascript & jQuery
-        level: 98%
-
-      - name: Angular
-        level: 98%
-
-      - name: HTML5 & CSS
-        level: 95%
-
       - name: Ruby on Rails
-        level: 85%
+        level: 20%
 
-      - name: Sketch & Photoshop
+      - name: Ruby
         level: 60%
 
+      - name: RSpec
+        level: 60%
+
+      - name: Selenium WebDriver
+        level: 60%
+
+      - name: Cypress
+        level: 20%
+
+      - name: MySQL / MariaDB
+        level: 40%
+
+      - name: Postgres
+        level: 20%
+      
+      - name: VirtualBox & Vagrant
+        level: 60%
+      
+      - name: GIT & GitHub
+        level: 60%
+      
+      - name: Linux & MacOS
+        level: 60%
+      
+      - name: Bash
+        level: 40%
+      
+      - name: Jekyll & Liquid
+        level: 20%
+      
+      - name: Software Deployment
+        level: 80%
+
+      - name: Exploratory Testing
+        level: 40%
+      
+      - name: Regression Testing
+        level: 80%
+      
+      - name: RestFul API Testing
+        level: 40%
+      
+      - name: Mobile Testing
+        level: 40%
+      
+      - name: Behavior Driven Development in Testing (Gherkin)
+        level: 60%
+      
+      - name: Test Plan, Cases, Processes
+        level: 80%
+      
+      - name: Team Leadership
+        level: 40%
+      
+      - name: Test Automation
+        level: 40%
+      
 # footer: >
 #     Designed with <i class="fas fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank" rel="nofollow">Xiaoying Riley</a>

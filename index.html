@@ -11,7 +11,9 @@ layout: default
   {% include education.html %}
 {% endunless %}
 
-{% include certificates.html %}
+{% unless site.data.data.sidebar.certificates %}
+  {% include certificates.html %}
+{% endunless %}
 
 {% include conferences.html %}
 
@@ -21,4 +23,6 @@ layout: default
 
 <!-- {% include publications.html %} -->
 
-{% include skills.html %}
+{% unless site.data.data.sidebar.skills %}
+  {% include skills.html %}
+{% endunless %}
