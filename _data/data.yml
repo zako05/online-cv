@@ -6,6 +6,7 @@ sidebar:
     about: False # set to False or comment line if you want to remove the "how to use?" in the sidebar
     education: True # set to False if you want education in main section instead of in sidebar
     certificates: True
+    interests: True
     skills: False
 
     # Profile information
@@ -101,6 +102,12 @@ education:
 certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
       time: Nov 2012
+interests:
+    - item: Ice Hockey   
+    - item: Snowboarding
+    - item: Squash
+    - item: Traveling
+    - item: Test Automation
 conferences:
     - title: SeleniumConfUK
       link: https://ti.to/whiteoctober/seleniumconf-uk-2016
@@ -111,15 +118,6 @@ conferences:
     - title: WeAreDevelopers 2018
       link: https://www.wearedevelopers.com
       time: May 2018
-interests:
-    - details:
-      - I enjoy playing ice hockey since I was young, and in this hectic world it is one of the not so many opportunities to hangout with the friends.
-    - details:
-      - I have started playing squash with my ex-colleges few years ago, and I have to say that this is great relax during hard working days.
-    - details:
-      - I enjoy traveling, visiting new places that I has not visited yet, meeting new people, and doing planning and researching of a place before depart.
-    - details:
-      - Test Automation (Selenium + Ruby + RSpec) is not something I was doing in my previous work, but it is something that I continuously learn because I strongly believe that this is the key of doing testing even more effectively.
 # projects:
 #     title: Projects
 #     intro: >

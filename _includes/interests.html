@@ -1,49 +1,49 @@
-<!-- {% assign interests = site.data.data.sidebar.interests %} -->
 {% assign interests = site.data.data.interests %}
 {% if interests %}
-<section class="section interests-section">
-  <h2 class="section-title">
-    <span class="fa-stack fa-xs">
-      <i class="fas fa-circle fa-stack-2x"></i>
-      <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
-    </span>
-    Interests
-  </h2>
-
-  {% for interest in interests %}
-  <div class="item">
-
-    <div class="meta">
-
-      <div class="upper-row">
-        <ul>
-          <li>{{ interest.details }}</li>
-        </ul>
-      </div><!--//upper-row-->
-
-    </div><!--//meta-->
-
-  </div><!--//item-->
-  {% endfor %}
-
-</section><!--//section-->
-<!-- <div class="interests&#45;container container&#45;block"> -->
-<!--  -->
-<!--   <h2 class="container&#45;block&#45;title"> -->
-<!--     Interests -->
-<!--   </h2> -->
-<!--  -->
-<!--   <ul class="list&#45;unstyled interests&#45;list"> -->
-<!--     {% for interest in interests %} -->
-<!--  -->
-<!--       {% if interest.link %} -->
-<!--       <li><a href="{{ interest.link }}">{{ interest.item }}</a></li> -->
-<!--       {% else %} -->
-<!--       <li>{{ interest.item }}</li> -->
-<!--       {% endif %} -->
-<!--  -->
-<!--     {% endfor %} -->
-<!--   </ul> -->
-<!--  -->
-<!-- </div><!&#45;&#45;//interests&#45;&#45;> -->
+  {% if site.data.data.sidebar.interests %}
+  <div class="interests-container container-block">
+  
+    <h2 class="container-block-title">
+      Interests
+    </h2>
+  
+    <ul class="list-unstyled interests-list">
+      {% for interest in interests %}
+        {% if interest.link %}
+        <li><a href="{{ interest.link }}">{{ interest.item }}</a></li>
+        {% else %}
+        <li>{{ interest.item }}</li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  
+  </div><!--//interests-->
+  {% else %}
+  <section class="section interests-section">
+    <h2 class="section-title">
+      <span class="fa-stack fa-xs">
+        <i class="fas fa-circle fa-stack-2x"></i>
+        <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+      </span>
+      Interests
+    </h2>
+  
+    {% for interest in interests %}
+    <div class="item">
+  
+      <div class="meta">
+  
+        <div class="upper-row">
+          <ul>
+            <li>{{ interest.item }}</li>
+          </ul>
+        </div><!--//upper-row-->
+  
+      </div><!--//meta-->
+  
+    </div><!--//item-->
+    {% endfor %}
+  
+  </section><!--//section-->
+  {% endif %}
 {% endif %}

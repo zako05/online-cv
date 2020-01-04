@@ -17,7 +17,9 @@ layout: default
 
 {% include conferences.html %}
 
-{% include interests.html %}
+{% unless site.data.data.sidebar.interests %}
+  {% include interests.html %}
+{% endunless %}
 
 <!-- {% include projects.html %} -->
 
