@@ -48,7 +48,15 @@ experiences:
       time: Feb 2019 - Present
       company: Innovatrics, Bratislava
       details: |
-        - 
+        - part of team with focus on attendance system
+        - modification existing & creation new automated UI E2E tests 
+          using by Ruby & Cucumber + Capybara & Selenium Webdriver
+        - creation new automated UI E2E tests for new cloud platform 
+          using by Ruby, RSpec & Selenium Webdriver, 
+          Rest API library (gem) for automated API E2E tests, 
+          and later using by Cypress.io
+        - understanding biomatric technologies such as 
+          fingerprint & facial recognition, and setup devices for its purpose
     - role: Test Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne
