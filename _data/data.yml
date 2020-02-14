@@ -187,67 +187,70 @@ skills:
     title: Skills &amp; Proficiency
 
     toolset:
-      - name: Ruby on Rails
-        level: 20%
-
-      - name: Ruby
-        level: 60%
-
-      - name: RSpec
-        level: 60%
-
-      - name: Selenium WebDriver
-        level: 60%
-
-      - name: Cypress
-        level: 20%
-
-      - name: MySQL / MariaDB
-        level: 40%
-
-      - name: Postgres
-        level: 20%
-      
-      - name: VirtualBox & Vagrant
-        level: 60%
-      
-      - name: GIT & GitHub
-        level: 60%
-      
-      - name: Linux & MacOS
-        level: 60%
-      
-      - name: Bash
-        level: 40%
-      
-      - name: Jekyll & Liquid
-        level: 20%
-      
-      - name: Software Deployment
-        level: 80%
-
       - name: Exploratory Testing
-        level: 40%
+        level: 90%
       
       - name: Regression Testing
-        level: 80%
+        level: 90%
       
       - name: RestFul API Testing
-        level: 40%
+        level: 60%
       
       - name: Mobile Testing
-        level: 40%
-      
-      - name: Behavior Driven Development in Testing (Gherkin)
         level: 60%
       
       - name: Test Plan, Cases, Processes
         level: 80%
       
       - name: Team Leadership
-        level: 40%
+        level: 60%
+      
+      - name: BDD in Testing (Gherkin)
+        level: 60%
       
       - name: Test Automation
+        level: 60%
+      
+      - name: Jira & Confluence
+        level: 80%
+      
+      - name: Linux & MacOS
+        level: 60%
+      
+      - name: Bash
+        level: 60%
+      
+      - name: VIM
+        level: 40%
+
+      - name: MySQL / MariaDB
+        level: 40%
+
+      - name: Postgres
+        level: 40%
+      
+      - name: GIT & GitHub
+        level: 60%
+      
+      - name: VirtualBox & Vagrant
+        level: 60%
+        
+      - name: Ruby on Rails
+        level: 20%
+
+      - name: Selenium WebDriver
+        level: 40%
+
+      - name: Ruby
+        level: 40%
+
+      - name: RSpec
+        level: 40%
+
+      - name: Cypress.io
+        level: 40%
+      
+      - name: Mocha
         level: 40%
       
 # footer: >
