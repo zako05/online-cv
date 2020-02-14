@@ -17,12 +17,19 @@ sidebar:
     # Sidebar links
     email: michal.zak84@gmail.com
     phone: +421 903 647 310
-    website: zakmichal.com #do not add http://
+    # website: zakmichal.com #do not add http://
     linkedin: zakmichal
     github: zako05
     twitter: '@zak_michal'
     stack-overflow: 9822844/michalzak # Number/Username, e.g. 123456/alandoe
     tau: zakmichal
+    files:
+      - type: PDF
+        path: download_cv/CV-Michal-Zak-022020.pdf
+      - type: MSWord
+        path: download_cv/CV-Michal-Zak-022020.docx
+      - type: Pages
+        file: download_cv/CV-Michal-Zak-022020.pages
 
     languages:
       - idiom: English
@@ -37,26 +44,28 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      I am professional software tester mostly focused on manual testing
-      with 6 years of experiences in both web and mobile testing. I am 
-      open-minded person always willing to help who has a good technical 
-      skills, and always focused on detail. I know that the client’s business 
-      comes first, so I always seek for the compromises between devs 
-      and business.
+      I am professional software tester with 7+ years of experiences 
+      in both web and mobile testing environments, focusing on 
+      UI test automation past couple of years. I'm open-minded person always 
+      willing to help who has a good technical skills, and is detailed oriented. 
+      I realise the importance of client's business and 
+      thus I always listen to the development and business needs, 
+      and looks for the compromises.
 experiences:
     - role: Software Tester
       time: Feb 2019 - Present
       company: Innovatrics, Bratislava
       details: |
-        - part of team with focus on attendance system
-        - modification existing & creation new automated UI E2E tests 
-          using by Ruby & Cucumber + Capybara & Selenium Webdriver
-        - creation new automated UI E2E tests for new cloud platform 
-          using by Ruby, RSpec & Selenium Webdriver, 
-          Rest API library (gem) for automated API E2E tests, 
-          and later using by Cypress.io
-        - understanding biomatric technologies such as 
-          fingerprint & facial recognition, and setup devices for its purpose
+        - I'm part of the team working on the attendance system Fingera 
+          with strong understanding biometric technologies 
+          for fingerprint & facial recognition 
+        - maintaining the existing UI E2E tests 
+          written in Ruby, Cucumber + Capybara, and Selenium WebDriver
+        - creating & maintaining new test automation framework 
+          for new cloud solution 
+          written in Ruby, RSpec, and Selenium WebDriver + Rest API gem, 
+          and later switch to Cypress.io, Docker (for parallelisation), 
+          and GitLab (as CI pipeline)
     - role: Test Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne

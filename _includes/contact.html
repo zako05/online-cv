@@ -73,5 +73,14 @@
     </li>
     {% endif %}
 
+    <li><i class="fas">CV</i>
+      {% assign files = site.data.data.sidebar.files %}
+      {% if sidebar.files %}
+        {%for file in files %}    
+        <a href="{{ file.path }}" class="file-pdf" target="_blank">{{ file.type }}</a>
+        {% endfor %}
+      {% endif %}
+    </li>
+
   </ul>
 </div><!--//contact-container-->
