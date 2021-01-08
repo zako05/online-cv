@@ -25,11 +25,11 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-022020.pdf
+        path: download_cv/CV-Michal-Zak-01082021.pdf
       - type: MSWord
-        path: download_cv/CV-Michal-Zak-022020.docx
+        path: download_cv/CV-Michal-Zak-01082021.docx
       - type: Pages
-        file: download_cv/CV-Michal-Zak-022020.pages
+        file: download_cv/CV-Michal-Zak-01082021.pages
 
     languages:
       - idiom: English
@@ -52,11 +52,14 @@ career-profile:
       thus I always listen to the development and business needs, 
       and looks for the compromises.
 experiences:
-    - role: Software Tester
-      time: Feb 2019 - Present
+    - role: Freelance Software Tester
+      time: Jan 2012 - Present
+      company: Self employed / Contractor
+    - role: Software Test Enginner
+      time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
       details: |
-        - I'm part of the team working on the attendance system Fingera 
+        - I was part of the team working on the attendance system Fingera 
           with strong understanding biometric technologies 
           for fingerprint & facial recognition 
         - maintaining the existing UI E2E tests 
