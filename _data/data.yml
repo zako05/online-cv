@@ -11,8 +11,8 @@ sidebar:
 
     # Profile information
     name: Michal Zak
-    tagline: Software Tester
-    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
+    tagline: Software Test Engineer
+    avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file belowl
 
     # Sidebar links
     email: michal.zak84@gmail.com
@@ -25,11 +25,11 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-01082021.pdf
+        path: download_cv/CV-Michal-Zak-13122022.pdf
       - type: MSWord
-        path: download_cv/CV-Michal-Zak-01082021.docx
+        path: download_cv/CV-Michal-Zak-13122022.docx
       - type: Pages
-        file: download_cv/CV-Michal-Zak-01082021.pages
+        path: download_cv/CV-Michal-Zak-13122022.pages
 
     languages:
       - idiom: English
@@ -44,68 +44,47 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      I am professional software tester with 7+ years of experiences 
-      in both web and mobile testing environments, focusing on 
-      UI test automation past couple of years. I'm open-minded person always 
-      willing to help who has a good technical skills, and is detailed oriented. 
-      I realise the importance of client's business and 
-      thus I always listen to the development and business needs, 
-      and looks for the compromises.
+      I am a software test engineer with 8+ years of experiences focusing on test automation of web apps.
+      I realise the importance of client's business and thus I always listen to the development and business needs, 
+      and look for the compromises. I'm open-minded & easy-going person. 
 experiences:
-    - role: Freelance Software Tester
-      time: Jan 2012 - Present
-      company: Self employed / Contractor
-    - role: Software Test Enginner
+    - role: Software Test Engineer
+      time: Jul 2021 - Dec 2022
+      company: Vestberry, Bratislava
+      details: |
+        - building up a test automation framework in Cypress.io by
+          following & implemeting the best practices of test automation & Cypress.io
+        - designing, implementing & maintaining E2E / API specs in Cypress.io
+        - TechStack: Node.js, React, Postgres, GraphQL, Cypress.io, Jest, GitLab & Docker
+    - role: Software Test Engineer
       time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
       details: |
-        - I was part of the team working on the attendance system Fingera 
-          with strong understanding biometric technologies 
-          for fingerprint & facial recognition 
-        - maintaining the existing UI E2E tests 
-          written in Ruby, Cucumber + Capybara, and Selenium WebDriver
-        - creating & maintaining new test automation framework 
-          for new cloud solution 
-          written in Ruby, RSpec, and Selenium WebDriver + Rest API gem, 
-          and later switch to Cypress.io, Docker (for parallelisation), 
-          and GitLab (as CI pipeline)
+        - manually testing the attendance system "Fingera" with understanding of
+          biometric technologies for fingerprint & facial recognition 
+        - maintaining & executing the existing E2E tests (WebDriver, Ruby, Cucumber + Capybara)
+        - building up new test automation framework for new cloud solution in Cypress.io
     - role: Test Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne
       details: |
-        - I led small team of 4 testers. In this role I was focused on preparing 
-        different test plans to deliver release to the clients on time with as 
-        fewer bugs as possible, communication with testers through individual 
-        sessions, stand-ups or meetings, integrating testing into development 
-        process by following agile values and principles. 
-    - role: Software Tester
+        - leading a small team of 4 testers
+        - preparing & executing different test plans 
+          to deliver each release to the clients on time with as fewer bugs as possible
+        - communicating with testers through individual sessions, stand-ups & meetings
+        - integrating the testing into development process by following agile values and principles
+    - role: Software Test Engineer
       time: Jul 2013 - Jan 2017
       company: Box+Dice, Melbourne
       details: |
-        - performed functional (exploratory, regression & smoke testing)
-          & non-functional testing, API testing, mobile testing
-          in CI environment
-        - worked closely with analysts & developers to make better solutions
-        - test scenarios creation & maintenance, test planning, bug reporting
-          & tracking, etc.
-        - executed the deployment process (migrations, sanitisation, etc.)
+        - performing E2E (exploratory, regression & smoke), API & mobile testing in CI environment
+        - working closely with analysts & developers to make better solutions
+        - creating, maintening & executing the tests, test planning & bug reporting
+        - executing deployment process (including migrations & sanitisation of existing data)
           in both local & server environment
-    - role: Software Tester
-      time: Jan 2012 - Jun 2013
-      company: Kedros, Bratislava
-      details: |
-        - study functional specifications (use cases) and understand
-          particular modules of the system (Customer management, Self-Care,
-          Dunning, Request Management, Configuration and Maintenance,
-          Billing, etc.)
-        - create test scenarios, execute test scenarios, bug reporting,
-          retesting already fixed bugs, participate in creating test plan,
-          perform the basic database operations, administration of application
-          server (basic operations, mostly done for getting the error logs
-          or for dunning module to simulate time shifting for production
-          simulation)
-        - communication with system architects, analysts, programmers, scrum
-          master(s) and managers
+    - role: Freelance Software Test Engineer
+      time: Jan 2012 - Present
+      company: Self employed / Contractor
 education:
     - degree: Upper Intermediate, English
       university: New Horizon Collage of English in New Zealand
@@ -191,69 +170,27 @@ skills:
 
     toolset:
       - name: Exploratory Testing
-        level: 90%
-      
-      - name: Regression Testing
-        level: 90%
-      
-      - name: RestFul API Testing
-        level: 60%
-      
-      - name: Mobile Testing
-        level: 60%
-      
-      - name: Test Plan, Cases, Processes
         level: 80%
       
-      - name: Team Leadership
-        level: 60%
-      
-      - name: BDD in Testing (Gherkin)
-        level: 60%
-      
-      - name: Test Automation
-        level: 60%
-      
-      - name: Jira & Confluence
+      - name: E2E Test Automation
         level: 80%
       
-      - name: Linux & MacOS
-        level: 60%
-      
-      - name: Bash
-        level: 60%
-      
-      - name: VIM
-        level: 40%
-
-      - name: MySQL / MariaDB
-        level: 40%
-
-      - name: Postgres
+      - name: API Test Automation
         level: 40%
       
-      - name: GIT & GitHub
-        level: 60%
-      
-      - name: VirtualBox & Vagrant
-        level: 60%
-        
-      - name: Ruby on Rails
-        level: 20%
-
-      - name: Selenium WebDriver
-        level: 40%
-
-      - name: Ruby
-        level: 40%
-
-      - name: RSpec
-        level: 40%
-
       - name: Cypress.io
-        level: 40%
+        level: 60%
       
-      - name: Mocha
+      - name: ZSH / Vim
+        level: 40%
+       
+      - name: GIT / GitHub / GitLab
+        level: 60%
+     
+      - name: Node.js / React / GraphQL
+        level: 20%
+     
+      - name: SQL / Postgress
         level: 40%
       
 # footer: >
