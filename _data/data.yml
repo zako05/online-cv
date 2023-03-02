@@ -20,8 +20,9 @@ sidebar:
     # website: zakmichal.com #do not add http://
     linkedin: zakmichal
     github: zako05
-    twitter: '@zak_michal'
+    twitter: zak_michal
     stack-overflow: 9822844/michalzak # Number/Username, e.g. 123456/alandoe
+    hacker-rank: zako05
     tau: zakmichal
     files:
       - type: PDF
@@ -44,9 +45,14 @@ sidebar:
 career-profile:
     title: Career Profile
     summary: |
-      I am a software test engineer with 8+ years of experiences focusing on test automation of web apps.
-      I realise the importance of client's business and thus I always listen to the development and business needs, 
-      and look for the compromises. I'm open-minded & easy-going person. 
+      Over the past years, I've primarily focused on the technical aspects of testing.
+      This includes gaining a comprehensive understanding of how different parts of the software work together
+      to design the most effective test automation solutions based on best practices.
+      I love discussing the technical aspects of a problem and searching for the best solutions with my colleagues,
+      and I greatly appreciate the opportunity to learn from them. 
+      Although I'm almost never the smartest person in the room,
+      my easy-going and friendly personality helps me better communicate and understand the team's needs.
+      However, frankly speaking, it's not an easy job at times.
 experiences:
     - role: Software Test Engineer
       time: Jul 2021 - Dec 2022
@@ -176,22 +182,34 @@ skills:
         level: 80%
       
       - name: API Test Automation
-        level: 40%
-      
-      - name: Cypress.io
         level: 60%
       
-      - name: ZSH / Vim
-        level: 40%
-       
-      - name: GIT / GitHub / GitLab
+      - name: Cypress.io / Jest
         level: 60%
-     
-      - name: Node.js / React / GraphQL
-        level: 20%
      
       - name: SQL / Postgress
         level: 40%
+       
+      - name: Git / GitHub / GitLab
+        level: 40%
+     
+      - name: Javascript
+        level: 40%
+     
+      - name: GraphQL
+        level: 30%
+     
+      - name: Node.js / React
+        level: 15%
+     
+      - name: Docker
+        level: 15%
+      
+      - name: Zsh / Vim
+        level: 25%
+     
+      - name: Jira, Miro, Notion
+        level: 50%
       
 # footer: >
 #     Designed with <i class="fas fa-heart"></i> by <a href="http://zakmichal.com" target="_blank" rel="nofollow">Michal Zak</a>
