@@ -58,39 +58,44 @@ experiences:
       time: Jul 2021 - Dec 2022
       company: Vestberry, Bratislava
       details: |
-        - building up a test automation framework in Cypress.io by
-          following & implemeting the best practices of test automation & Cypress.io
-        - designing, implementing & maintaining E2E / API specs in Cypress.io
-        - TechStack: Node.js, React, Postgres, GraphQL, Cypress.io, Jest, GitLab & Docker
+        - Implemented an automated testing framework with Cypress.io that followed best practices
+        - Developed and maintained E2E/API tests using Cypress.io
+        - Configured and maintained CI pipeline in GitLab to streamline application testing
+      techStack: Node.js, React, Postgres, GraphQL, Git (GitLab), Docker, Cypress.io, Jest
     - role: Software Test Engineer
       time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
       details: |
-        - manually testing the attendance system "Fingera" with understanding of
-          biometric technologies for fingerprint & facial recognition 
-        - maintaining & executing the existing E2E tests (WebDriver, Ruby, Cucumber + Capybara)
-        - building up new test automation framework for new cloud solution in Cypress.io
+        - Manually testing the attendance system “Fingera” with understanding of biometric technologies for fingerprint & facial recognition
+        - Maintained suite of automated tests in Selenium WebDriver for attendance system “Fingera” utilizing biometric technologies including fingerprint & facial recognition
+        - Architected and deployed test automation framework utilizing Cypress.io for new cloud solution
+      techStack: Ruby on Rails, Postgres, React, Git (Bitbucket), Docker, Selenium WebDriver, Cucumber, Capybara, Cypress.io 
     - role: Test Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne
       details: |
-        - leading a small team of 4 testers
-        - preparing & executing different test plans 
-          to deliver each release to the clients on time with as fewer bugs as possible
-        - communicating with testers through individual sessions, stand-ups & meetings
-        - integrating the testing into development process by following agile values and principles
+        - Managed a testing team to ensure timely delivery of bug-free products to client
+        - Implemented Agile values and principles to facilitate seamless integration of testing into development process
+        - Facilitated regular communication with testers through individual sessions, e.g. stand-ups, retrospectives, etc.
+        - Executed various test plans to ensure timely delivery of releases to clients with minimal bugs
     - role: Software Test Engineer
       time: Jul 2013 - Jan 2017
       company: Box+Dice, Melbourne
       details: |
-        - performing E2E (exploratory, regression & smoke), API & mobile testing in CI environment
-        - working closely with analysts & developers to make better solutions
-        - creating, maintening & executing the tests, test planning & bug reporting
-        - executing deployment process (including migrations & sanitisation of existing data)
-          in both local & server environment
+        - Effectively conducted E2E (exploratory, regression & smoke), API & mobile testing in CI environment
+        - Collaborated with analysts & developers to drive better solutions
+        - Generated test plans, executed tests & reported on bug findings
+        - Deployed changes including data migrations & sanitisation in local & server environments
+      techStack: PHP, Ruby on Rails, Backbone.js, CoffeeScript, React Native, MariaDB, Postgres, Git (GitHub), Jenkins, Jasmine, Selenium WebDriver, Appium
     - role: Freelance Software Test Engineer
       time: Jan 2012 - Present
       company: Self employed / Contractor
+      details: |
+        - Experienced software test engineer with expertise in web development
+        - Skilled in E2E & API testing
+        - Configured and maintained CI/CD pipelines to streamline application testing
+        - Helped to improve the overall quality and efficiency of the testing process
+        - Continuously learning about the latest testing trends and best practices
 education:
     - degree: Upper Intermediate, English
       university: New Horizon Collage of English in New Zealand
@@ -108,11 +113,11 @@ certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
       time: Nov 2012
 interests:
-    - item: Ice Hockey   
-    - item: Snowboarding
-    - item: Squash
+    - item: Test Automation & JS
+    - item: Running
     - item: Traveling
-    - item: Test Automation
+    - item: Splitboarding
+    - item: Ice Hockey   
 conferences:
     - title: SeleniumConfUK
       link: https://ti.to/whiteoctober/seleniumconf-uk-2016
