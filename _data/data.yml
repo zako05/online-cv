@@ -26,11 +26,11 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-13122022.pdf
+        path: download_cv/CV-Michal-Zak-20241018.pdf
       - type: MSWord
-        path: download_cv/CV-Michal-Zak-13122022.docx
+        path: download_cv/CV-Michal-Zak-20241018.docx
       - type: Pages
-        path: download_cv/CV-Michal-Zak-13122022.pages
+        path: download_cv/CV-Michal-Zak-20241018.pages
 
     languages:
       - idiom: English
@@ -55,13 +55,31 @@ career-profile:
       However, frankly speaking, it's not an easy job at times.
 experiences:
     - role: Software Test Engineer
+      time: August 2023 - present
+      company: Instea, Bratislava
+      projects: |
+        US Quick Online 1.0 & 2.0
+        - Developed & maintained Performance tests using K6 with Javascript for both projects
+
+        US Quick Dispatch Dashboard
+          - Developed & maintained E2E/API tests using Playwright with Javascript
+          - Configured and maintained CI pipeline in Jenkins to streamline application testing
+      techStack: JS, Node.js, React, GraphQL, Git (GitHub/Bitbucket), MS Playwright, Grafana Labs K6, Docker, Jenkins
+    - role: Software Test Engineer
+      time: Jun 2023 - Jul 2023
+      company: Vectary, Bratislava
+      details: |
+        - Developed and maintained E2E/API tests using Cypress.io
+        - Configured and maintained CI pipeline in Bitbucket to streamline application testing
+      techStack: JS/TS, GraphQL, Git (Bitbucket), Docker, Cypress.io
+    - role: Software Test Engineer
       time: Jul 2021 - Dec 2022
       company: Vestberry, Bratislava
       details: |
         - Implemented an automated testing framework with Cypress.io that followed best practices
         - Developed and maintained E2E/API tests using Cypress.io
         - Configured and maintained CI pipeline in GitLab to streamline application testing
-      techStack: Node.js, React, Postgres, GraphQL, Git (GitLab), Docker, Cypress.io, Jest
+      techStack: JS/TS, Node.js, React, Postgres, GraphQL, Git (GitLab), Docker, Cypress.io, Jest
     - role: Software Test Engineer
       time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
@@ -189,7 +207,7 @@ skills:
       - name: API Test Automation
         level: 60%
       
-      - name: Cypress.io / Jest
+      - name: Cypress.io / Playwright
         level: 60%
      
       - name: SQL / Postgress
