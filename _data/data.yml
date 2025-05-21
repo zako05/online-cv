@@ -87,7 +87,7 @@ experiences:
         - Maintained suite of automated tests in Selenium WebDriver for attendance system “Fingera” utilizing biometric technologies including fingerprint & facial recognition
         - Architected and deployed test automation framework utilizing Cypress.io for new cloud solution
       techStack: Ruby on Rails, Postgres, React, Git (Bitbucket), Docker, Selenium WebDriver, Cucumber, Capybara, Cypress.io 
-    - role: Test Lead
+    - role: Software Test Engineer - Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne
       details: |
@@ -96,57 +96,22 @@ experiences:
         - Implemented Agile values and principles to facilitate seamless integration of testing into development process
         - Facilitated regular communication with testers through individual sessions, e.g. stand-ups, retrospectives, etc.
         - Executed various test plans to ensure timely delivery of releases to clients with minimal bugs
-    - role: Software Test Engineer
-      time: Jul 2013 - Jan 2017
-      company: Box+Dice, Melbourne
-      details: |
-        (B2B SaaS Real estate CRM for agents and agencies to manage contacts, listings, and sales)
-        - Effectively conducted E2E (exploratory, regression & smoke), API & mobile testing in CI environment
-        - Collaborated with analysts & developers to drive better solutions
-        - Generated test plans, executed tests & reported on bug findings
-        - Deployed changes including data migrations & sanitisation in local & server environments
       techStack: PHP, Ruby on Rails, Backbone.js, CoffeeScript, React Native, MariaDB, Postgres, Git (GitHub), Jenkins, Jasmine, Selenium WebDriver, Appium
-    - role: Freelance Software Test Engineer
-      time: Jan 2012 - Present
-      company: Self employed / Contractor
-      details: |
-        - Experienced software test engineer with expertise in web development
-        - Skilled in E2E & API testing
-        - Configured and maintained CI/CD pipelines to streamline application testing
-        - Helped to improve the overall quality and efficiency of the testing process
-        - Continuously learning about the latest testing trends and best practices
 education:
     - degree: Upper Intermediate, English
       university: New Horizon Collage of English in New Zealand
-      time: Jan 2011 - Apr 2011
       details: |
     - degree: Ing., Informatics
       university: Slovak University of Technology
-      time: Sep 2006 - Jun 2008
-      details: |
-    - degree: Bc., Informatics
-      university: University of St. Cyril and Methodius in Trnava
-      time: Sep 2003 - Jun 2006
       details: |
 certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
-      time: Nov 2012
 interests:
     - item: Test Automation & JS
     - item: Running
     - item: Traveling
     - item: Splitboarding
     - item: Ice Hockey   
-conferences:
-    - title: SeleniumConfUK
-      link: https://ti.to/whiteoctober/seleniumconf-uk-2016
-      time: Nov 2016
-    - title: GettingStartedWithSelenium
-      link: https://ti.to/whiteoctober/seleniumconf-uk-2016
-      time: Nov 2016
-    - title: WeAreDevelopers 2018
-      link: https://www.wearedevelopers.com
-      time: May 2018
 # projects:
 #     title: Projects
 #     intro: >
@@ -206,10 +171,10 @@ skills:
         level: 80%
       
       - name: API Test Automation
-        level: 60%
+        level: 70%
       
       - name: Cypress.io / Playwright
-        level: 60%
+        level: 80%
      
       - name: SQL / Postgress
         level: 40%
@@ -218,22 +183,22 @@ skills:
         level: 40%
      
       - name: Javascript
-        level: 40%
+        level: 50%
+     
+      - name: Typescript
+        level: 25%
      
       - name: GraphQL
         level: 30%
      
       - name: Node.js / React
-        level: 15%
+        level: 35%
      
       - name: Docker
-        level: 15%
+        level: 25%
       
       - name: Zsh / Vim
-        level: 25%
-     
-      - name: Jira, Miro, Notion
-        level: 50%
+        level: 30%
       
 # footer: >
 #     Designed with <i class="fas fa-heart"></i> by <a href="http://zakmichal.com" target="_blank" rel="nofollow">Michal Zak</a>
