@@ -8,3 +8,5 @@ Gemfile
 Gemfile.lock
 tags*
 *.swp
+vendor/
+.bundle/

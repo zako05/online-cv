@@ -51,7 +51,12 @@ career-profile:
       However, frankly speaking, it's not an easy job at times.
 experiences:
     - role: Software Test Engineer
-      time: August 2023 - present
+      time: August 2025 - June 2026
+      company: Trezor, Prague
+      projects: Trezor Suite (open-source, cross-platform app to easily and securely manage, buy, sell, and swap crypt)
+      techStack: TS, Node.js, React, Playwright, Python, GitHub Actions
+    - role: Software Test Engineer
+      time: August 2023 - June 2025
       company: Instea, Bratislava
       projects: |
         US Quick Online 1.0 & 2.0 (B2B web-based app to manage the clinical supply chain logistics)
