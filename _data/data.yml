@@ -26,7 +26,7 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-20260730.pdf
+        path: download_cv/CV-Michal-Zak-20261028.pdf
 
     languages:
       - idiom: English
@@ -51,60 +51,60 @@ career-profile:
       I continuously strive to deliver high-quality software under demanding technical conditions.
 experiences:
     - role: Software Test Engineer
-      time: August 2025 - June 2026
+      time: Aug 2025 - Jun 2026
       company: Trezor, Prague
       projects: |
-        Trezor Suite (Open-source app for secure hardware wallet management)
-        - Developed Playwright E2E test suites for core crypto workflows (onboarding, passphrase, analytics, etc.)
-        - Resolved CI test flakiness and Electron teardown timeouts in GitHub Actions test pipelines
-        - Built automated test verification for product analytics events and link integrity
-      techStack: TS, Node.js, React, Playwright, Python, GitHub Actions
+        Trezor Suite (Open-source application for managing secure hardware wallets)
+        - Created Playwright E2E test suites focusing on core crypto processes like onboarding and passphrase handling
+        - Addressed CI test inconsistencies and Electron teardown delays in GitHub Actions pipelines
+        - Implemented automated testing for product analytics events and link validity checks
+      techStack: TS, Node.js, React, React Native, Playwright, WebSocket, Python, Git (GitHub Actions)
     - role: Software Test Engineer
-      time: August 2023 - June 2025
+      time: Aug 2023 - Jun 2025
       company: Instea, Bratislava
       projects: |
         US Quick Online 1.0 & 2.0 (B2B web-based app to manage clinical supply chain logistics)
-        - Developed & maintained performance tests using K6 with JavaScript for both projects
+        - Created and managed performance tests using K6 in JavaScript for both projects
 
         US Quick Dispatch Dashboard (Internal web-based app for dispatching international shipments)
-          - Developed & maintained E2E/API tests using Playwright with JavaScript
-          - Configured and maintained CI pipeline in Jenkins to streamline application testing
+          - Implemented end-to-end (E2E) and API tests with Playwright in JavaScript
+          - Set up and optimized CI pipeline in Jenkins for efficient application testing
       techStack: JS, Node.js, React, GraphQL, Git (GitHub/Bitbucket), MS Playwright, Grafana Labs K6, Docker, Jenkins
     - role: Software Test Engineer
       time: Jun 2023 - Jul 2023
       company: Vectary, Bratislava
       details: |
         (Online 3D design and augmented reality platform)
-        - Developed and maintained E2E/API tests using Cypress.io
-        - Configured and maintained CI pipeline in Bitbucket to streamline application testing
+        - Developed and maintained end-to-end and API tests with Cypress.io
+        - Configured and optimized CI pipeline in Bitbucket for application testing
       techStack: JS/TS, GraphQL, Git (Bitbucket), Docker, Cypress.io
     - role: Software Test Engineer
       time: Jul 2021 - Dec 2022
       company: Vestberry, Bratislava
       details: |
         (B2B SaaS for VC portfolio management, providing data insights and automated reporting)
-        - Implemented an automated testing framework with Cypress.io that followed best practices
-        - Developed and maintained E2E/API tests using Cypress.io
-        - Configured and maintained CI pipeline in GitLab to streamline application testing
+        - Created automated testing framework with Cypress.io adhering to best practices
+        - Managed E2E/API tests using Cypress.io
+        - Set up and managed CI pipeline in GitLab for efficient application testing
       techStack: JS/TS, Node.js, React, Postgres, GraphQL, Git (GitLab), Docker, Cypress.io, Jest
     - role: Software Test Engineer
       time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
       projects: |
         Fingera (B2B SaaS solution providing biometric access control and attendance management for SMBs)
-        - Performed manual testing of attendance workflows, focusing on biometric fingerprint & facial recognition
-        - Maintained automated test suites in Selenium WebDriver for core attendance management features
-        - Architected and deployed a test automation framework using Cypress.io for the new cloud solution
-      techStack: Ruby on Rails, Postgres, React, Git (Bitbucket), Docker, Selenium WebDriver, Cucumber, Capybara, Cypress.io 
+        - Manually tested the attendance system “Fingera” with expertise in biometric technologies for fingerprint and facial recognition
+        - Managed automated tests in Selenium WebDriver (Ruby, Cucumber + Capybara) for the “Fingera” attendance system incorporating biometric features like fingerprint and facial recognition
+        - Designed and implemented a test automation framework using Cypress.io for a novel cloud-based solution
+      techStack: Ruby, Ruby on Rails, Postgres, React, Git (Bitbucket), Docker, Selenium WebDriver, Cucumber, Capybara, Cypress.io
     - role: Software Test Engineer - Lead
       time: Jan 2017 - Oct 2018
       company: Box+Dice, Melbourne
       details: |
         (B2B SaaS Real estate CRM for agents and agencies to manage contacts, listings, and sales)
-        - Led a testing team to ensure reliable delivery of high-quality software to clients
-        - Implemented Agile values and principles to integrate testing seamlessly into the development process
-        - Facilitated regular team ceremonies and communication sessions (e.g. stand-ups, retrospectives)
-        - Executed structured test plans to maintain high application stability across production releases
+        - Managed a testing team to ensure timely delivery of bug-free products to client
+        - Implemented Agile values and principles to facilitate seamless integration of testing into development process
+        - Facilitated regular communication with testers through individual sessions, e.g. stand-ups, retrospectives, etc.
+        - Executed various test plans to ensure timely delivery of releases to clients with minimal bugs
       techStack: PHP, Ruby on Rails, Backbone.js, CoffeeScript, React Native, MariaDB, Postgres, Git (GitHub), Jenkins, Jasmine, Selenium WebDriver, Appium
 education:
     - degree: Upper Intermediate, English
