@@ -11,7 +11,7 @@ sidebar:
 
     # Profile information
     name: Michal Zak
-    tagline: Software Test Engineer
+    tagline: Senior Test Automation Engineer
     avatar: profile.png  #place a 100x100 picture inside /assets/images/ folder and provide the name of the file below
 
     # Sidebar links
@@ -26,7 +26,7 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-20261028.pdf
+        path: download_cv/CV-Michal-Zak-20261102.pdf
 
     languages:
       - idiom: English
@@ -50,7 +50,7 @@ career-profile:
       my easy-going and friendly personality helps me bridge communication and align with team needs.
       I continuously strive to deliver high-quality software under demanding technical conditions.
 experiences:
-    - role: Software Test Engineer
+    - role: Senior Test Automation Engineer
       time: Aug 2025 - Jun 2026
       company: Trezor, Prague
       projects: |
@@ -59,7 +59,7 @@ experiences:
         - Addressed CI test inconsistencies and Electron teardown delays in GitHub Actions pipelines
         - Implemented automated testing for product analytics events and link validity checks
       techStack: TS, Node.js, React, React Native, Playwright, WebSocket, Python, Git (GitHub Actions)
-    - role: Software Test Engineer
+    - role: Senior Test Automation Engineer
       time: Aug 2023 - Jun 2025
       company: Instea, Bratislava
       projects: |
@@ -70,7 +70,7 @@ experiences:
           - Implemented end-to-end (E2E) and API tests with Playwright in JavaScript
           - Set up and optimized CI pipeline in Jenkins for efficient application testing
       techStack: JS, Node.js, React, GraphQL, Git (GitHub/Bitbucket), MS Playwright, Grafana Labs K6, Docker, Jenkins
-    - role: Software Test Engineer
+    - role: Senior Test Automation Engineer
       time: Jun 2023 - Jul 2023
       company: Vectary, Bratislava
       details: |
@@ -78,7 +78,7 @@ experiences:
         - Developed and maintained end-to-end and API tests with Cypress.io
         - Configured and optimized CI pipeline in Bitbucket for application testing
       techStack: JS/TS, GraphQL, Git (Bitbucket), Docker, Cypress.io
-    - role: Software Test Engineer
+    - role: Senior Test Automation Engineer
       time: Jul 2021 - Dec 2022
       company: Vestberry, Bratislava
       details: |
