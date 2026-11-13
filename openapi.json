@@ -1,0 +1,297 @@
+---
+layout: null
+permalink: /openapi.json
+---
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "{{ site.title }} Online CV API",
+    "version": "1.0.0",
+    "description": "Public, zero-authentication REST API for retrieving {{ site.data.data.sidebar.name }}'s curriculum vitae, work experience, technical skills, education, certificates, and contact details.",
+    "contact": {
+      "name": {{ site.data.data.sidebar.name | jsonify }},
+      "email": {{ site.data.data.sidebar.email | jsonify }},
+      "url": "{{ site.url }}{{ site.baseurl }}/contact/"
+    }
+  },
+  "servers": [
+    {
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "description": "Production Online CV API Server"
+    }
+  ],
+  "paths": {
+    "/api/cv.json": {
+      "get": {
+        "operationId": "getCurriculumVitae",
+        "summary": "Retrieve complete curriculum vitae in structured JSON",
+        "description": "Returns the complete structured curriculum vitae for {{ site.data.data.sidebar.name }} ({{ site.data.data.sidebar.tagline }}), including contact information, career profile summary, chronological work experiences, technical skills with proficiency levels, education, certifications, languages, and interests.",
+        "parameters": [
+          {
+            "name": "section",
+            "in": "query",
+            "required": false,
+            "description": "Optional section filter (for example: experiences, skills, education, certificates, languages, contact).",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "all",
+                "experiences",
+                "skills",
+                "education",
+                "certificates",
+                "languages",
+                "contact"
+              ],
+              "default": "all"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Structured curriculum vitae JSON payload.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurriculumVitae"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid query parameter supplied.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Requested API endpoint or resource was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CurriculumVitae": {
+        "type": "object",
+        "description": "Full curriculum vitae profile for {{ site.data.data.sidebar.name }}.",
+        "required": [
+          "name",
+          "tagline",
+          "description",
+          "url",
+          "contact",
+          "career_profile",
+          "experiences",
+          "skills",
+          "education"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Full name of the candidate."
+          },
+          "tagline": {
+            "type": "string",
+            "description": "Primary professional title and specialization."
+          },
+          "description": {
+            "type": "string",
+            "description": "Short professional bio."
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Canonical URL of the online curriculum vitae."
+          },
+          "contact": {
+            "$ref": "#/components/schemas/ContactInfo"
+          },
+          "career_profile": {
+            "type": "string",
+            "description": "Executive summary of engineering focus and testing philosophy."
+          },
+          "experiences": {
+            "type": "array",
+            "description": "Chronological list of professional engineering roles and projects.",
+            "items": {
+              "$ref": "#/components/schemas/ExperienceItem"
+            }
+          },
+          "skills": {
+            "type": "array",
+            "description": "List of technical skills and proficiency levels.",
+            "items": {
+              "$ref": "#/components/schemas/SkillItem"
+            }
+          },
+          "education": {
+            "type": "array",
+            "description": "Academic degrees and language institutions.",
+            "items": {
+              "$ref": "#/components/schemas/EducationItem"
+            }
+          },
+          "certificates": {
+            "type": "array",
+            "description": "Professional testing certifications.",
+            "items": {
+              "type": "object",
+              "required": ["title"],
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Name and license identifier of the certificate."
+                }
+              }
+            }
+          },
+          "languages": {
+            "type": "array",
+            "description": "Spoken languages and proficiency levels.",
+            "items": {
+              "type": "object",
+              "required": ["idiom", "level"],
+              "properties": {
+                "idiom": {
+                  "type": "string",
+                  "description": "Language name."
+                },
+                "level": {
+                  "type": "string",
+                  "description": "Proficiency level."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ContactInfo": {
+        "type": "object",
+        "description": "Direct contact details and external developer profile URLs.",
+        "required": ["email", "phone", "github", "linkedin"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Contact email address."
+          },
+          "phone": {
+            "type": "string",
+            "description": "Contact telephone number."
+          },
+          "github": {
+            "type": "string",
+            "format": "uri",
+            "description": "GitHub profile URL."
+          },
+          "linkedin": {
+            "type": "string",
+            "format": "uri",
+            "description": "LinkedIn profile URL."
+          }
+        }
+      },
+      "ExperienceItem": {
+        "type": "object",
+        "description": "Work experience entry detailing role, company, duration, and technologies used.",
+        "required": ["role", "time", "company"],
+        "properties": {
+          "role": {
+            "type": "string",
+            "description": "Job title held during the engagement."
+          },
+          "time": {
+            "type": "string",
+            "description": "Date range of the engagement."
+          },
+          "company": {
+            "type": "string",
+            "description": "Company name and city."
+          },
+          "projects": {
+            "type": "string",
+            "description": "Key projects and responsibilities."
+          },
+          "details": {
+            "type": "string",
+            "description": "Detailed accomplishments."
+          },
+          "techStack": {
+            "type": "string",
+            "description": "Comma-separated list of technologies, frameworks, and tools used."
+          }
+        }
+      },
+      "SkillItem": {
+        "type": "object",
+        "description": "Technical skill and self-assessed proficiency percentage.",
+        "required": ["name", "level"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of the tool, language, or testing discipline."
+          },
+          "level": {
+            "type": "string",
+            "description": "Proficiency percentage (e.g. 90%)."
+          }
+        }
+      },
+      "EducationItem": {
+        "type": "object",
+        "description": "Academic degree or educational qualification.",
+        "required": ["degree", "university"],
+        "properties": {
+          "degree": {
+            "type": "string",
+            "description": "Degree or qualification earned."
+          },
+          "university": {
+            "type": "string",
+            "description": "University or institution name."
+          }
+        }
+      },
+      "ApiError": {
+        "type": "object",
+        "description": "Structured JSON error response with machine-readable code and resolution hint.",
+        "required": ["error", "code", "status", "message", "resolution"],
+        "properties": {
+          "error": {
+            "type": "string",
+            "description": "Short error category."
+          },
+          "code": {
+            "type": "string",
+            "description": "Machine-readable snake_case error code."
+          },
+          "status": {
+            "type": "integer",
+            "description": "HTTP status code."
+          },
+          "message": {
+            "type": "string",
+            "description": "Human-readable explanation of what went wrong."
+          },
+          "resolution": {
+            "type": "string",
+            "description": "Actionable hint explaining how an agent or developer can resolve the error."
+          }
+        }
+      }
+    }
+  }
+}

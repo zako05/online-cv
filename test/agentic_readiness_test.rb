@@ -125,6 +125,27 @@ class AgenticReadinessTest < Minitest::Test
     assert_kind_of Array, cv_data['skills']
     refute_empty cv_data['skills']
 
+    # /openapi.json is valid OpenAPI 3.0.3 with operationId and typed schemas
+    openapi_raw = File.read(File.join(SITE_DIR, 'openapi.json'))
+    openapi = JSON.parse(openapi_raw)
+    assert_equal '3.0.3', openapi['openapi']
+    assert_equal 'getCurriculumVitae', openapi.dig('paths', '/api/cv.json', 'get', 'operationId')
+    refute_nil openapi.dig('components', 'schemas', 'CurriculumVitae')
+    refute_nil openapi.dig('components', 'schemas', 'ApiError')
+
+    # Nonexistent /api/* endpoint returns structured JSON 404 error
+    status_api_err, _reason, headers_api_err, body_api_err = @app.handle(
+      'GET',
+      '/online-cv/api/nonexistent',
+      { 'accept' => 'application/json' }
+    )
+    assert_equal 404, status_api_err
+    assert_includes headers_api_err['Content-Type'], 'application/json'
+    err_json = JSON.parse(body_api_err)
+    assert_equal 'endpoint_not_found', err_json['code']
+    assert_equal 404, err_json['status']
+    refute_empty err_json['resolution']
+
     # /llms.txt follows llmstxt.org format and includes When to Use section
     llms_txt = File.read(File.join(SITE_DIR, 'llms.txt'))
     assert_match(/\A# Michal Zak - Senior Test Automation Engineer/, llms_txt)
@@ -200,6 +221,14 @@ class AgenticReadinessTest < Minitest::Test
     # Verify all JSON-LD product/service terms also appear verbatim in visible page content
     service['knowsAbout'].each do |term|
       assert_includes index_html, term, "Expected JSON-LD term '#{term}' to appear on homepage"
+    end
+
+    # Verify sequential heading hierarchy (no skipping from H1 to H3)
+    headings = index_html.scan(/<h([1-6])\b/i).flatten.map(&:to_i)
+    refute_empty headings
+    assert_equal 1, headings.first
+    headings.each_cons(2) do |prev_h, next_h|
+      assert_operator next_h - prev_h, :<=, 1, "Heading hierarchy skipped from H#{prev_h} to H#{next_h}"
     end
   end
 end

@@ -27,6 +27,7 @@ Reach for **{{ site.data.data.sidebar.name }} Online CV** when an AI agent, recr
 - [Homepage (Markdown)]({{ site.url }}{{ site.baseurl }}/index.md): Clean Markdown representation of the complete curriculum vitae.
 - [Full LLM Context]({{ site.url }}{{ site.baseurl }}/llms-full.txt): Complete plain-text/Markdown profile including work history, projects, skills, education, and certificates.
 - [Online CV JSON API]({{ site.url }}{{ site.baseurl }}/api/cv.json): Structured machine-readable JSON endpoint containing all CV sections.
+- [OpenAPI 3.0 Specification]({{ site.url }}{{ site.baseurl }}/openapi.json): OpenAPI specification describing the Online CV REST API and schemas.
 {% for file in site.data.data.sidebar.files %}- [Downloadable CV ({{ file.type }})]({{ site.url }}{{ site.baseurl }}/{{ file.path }}): Printable {{ file.type }} curriculum vitae.
 {% endfor %}
 ## Developer & Agent Documentation

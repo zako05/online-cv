@@ -105,7 +105,8 @@ p {
         margin-top: 0;
         margin-bottom: 15px;
     }
-    .degree {
+    .degree,
+    .certificate-title {
         font-size: 14px;
         margin-top: 0;
         margin-bottom: 5px;
@@ -121,6 +122,7 @@ p {
         }
         .meta {
             color: rgba(256, 256, 256, 0.6);
+            font-size: 14px;
             font-weight: 500;
             margin-bottom: 0px;
             margin-top: 0;

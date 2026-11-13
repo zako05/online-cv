@@ -15,6 +15,7 @@ permalink: /docs/index.md
 ## Endpoints
 
 - **`GET {{ site.baseurl }}/api/cv.json`** — Structured JSON API returning profile metadata, contact links, career summary, work experiences, technical skills, education, certificates, and languages.
+- **`GET {{ site.baseurl }}/openapi.json`** — OpenAPI 3.0.3 specification for the Online CV API.
 - **`GET {{ site.baseurl }}/index.md`** — Full curriculum vitae formatted in clean Markdown.
 - **`GET {{ site.baseurl }}/llms.txt`** — Standard `llms.txt` index file linking all primary resources and documentation.
 - **`GET {{ site.baseurl }}/llms-full.txt`** — Comprehensive plain-text/Markdown context bundle.
