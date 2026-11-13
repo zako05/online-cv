@@ -43,3 +43,4 @@ exclude:
   - edge
   - scripts
   - test
+  - wrangler.toml

@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /about/index.md
+---
+# About {{ site.data.data.sidebar.name }} — {{ site.data.data.sidebar.tagline }}
+
+**{{ site.data.data.sidebar.name }}** is a **{{ site.data.data.sidebar.tagline }}** with more than 8 years of hands-on experience designing, building, and scaling test automation frameworks for web, desktop (Electron), and API platforms across fintech/crypto hardware wallets, clinical supply chain logistics, 3D design tools, venture capital SaaS, biometric access control, and real estate CRM systems.
+
+## Engineering Philosophy
+
+{{ site.data.data.career-profile.summary | strip }}
+
+## Core Areas of Expertise
+{% for skill in site.data.data.skills.toolset %}
+- **{{ skill.name }}** ({{ skill.level }} proficiency){% endfor %}
+
+## Education & Certifications
+{% for edu in site.data.data.education %}
+- **{{ edu.degree }}** — {{ edu.university }}{% endfor %}
+{% for cert in site.data.data.certificates %}
+- **{{ cert.title }}**{% endfor %}
+
+## Navigation
+
+- [Online CV Homepage]({{ site.url }}{{ site.baseurl }}/)
+- [Contact {{ site.data.data.sidebar.name }}]({{ site.url }}{{ site.baseurl }}/contact/)
+- [Online CV API Documentation]({{ site.url }}{{ site.baseurl }}/docs/)

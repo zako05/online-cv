@@ -1,18 +1,27 @@
 /**
  * Cloudflare Worker / Edge Middleware for Agentic Readiness
  *
+ * Deploy with:
+ *   npx wrangler deploy
+ *
  * Implements:
- * 1. Markdown Content Negotiation (https://acceptmarkdown.com):
+ * 1. Root-Domain Mapping:
+ *    - Maps root paths (`/`, `/llms.txt`, `/robots.txt`, `/sitemap.xml`, `/docs/`, `/mcp/`,
+ *      `/about/`, `/contact/`, `/privacy/`, `/api/cv.json`, `/assets/...`) to the GitHub Pages
+ *      origin (`https://zako05.github.io/online-cv/...`) and rewrites canonical/resource URLs
+ *      to match the Worker's origin.
+ * 2. Markdown Content Negotiation (https://acceptmarkdown.com):
  *    - Requests with `Accept: text/markdown` receive `Content-Type: text/markdown; charset=utf-8`
- *      and `Vary: Accept` on `/`, `/online-cv/`, `/online-cv/docs/`, and `/online-cv/mcp/`.
+ *      and `Vary: Accept`.
  *    - Requests with `Accept: text/html` receive HTML with `Vary: Accept`.
- * 2. Agent-Friendly 404s:
+ * 3. Agent-Friendly 404s:
  *    - Nonexistent paths with `Accept: text/markdown` return HTTP 404 with a Markdown error body
  *      (`Content-Type: text/markdown; charset=utf-8`, `Vary: Accept`) linking to `llms.txt`, `sitemap.xml`, and `/docs/`.
  */
 
 const ORIGIN = 'https://zako05.github.io';
 const BASE_PATH = '/online-cv';
+const ORIGIN_BASE_URL = `${ORIGIN}${BASE_PATH}`;
 
 function prefersMarkdown(acceptHeader) {
   if (!acceptHeader) return false;
@@ -29,17 +38,54 @@ function appendVaryAccept(headers) {
   }
 }
 
+function stripBasePath(pathname) {
+  if (pathname === BASE_PATH || pathname === `${BASE_PATH}/`) {
+    return '/';
+  }
+  if (pathname.startsWith(`${BASE_PATH}/`)) {
+    return pathname.slice(BASE_PATH.length);
+  }
+  return pathname;
+}
+
 function resolveMarkdownPath(pathname) {
-  if (pathname === '/' || pathname === '' || pathname === BASE_PATH || pathname === `${BASE_PATH}/`) {
+  const clean = stripBasePath(pathname);
+  if (clean === '/' || clean === '' || clean === '/index.html') {
     return `${BASE_PATH}/index.md`;
   }
-  if (pathname === '/docs' || pathname === '/docs/' || pathname === `${BASE_PATH}/docs` || pathname === `${BASE_PATH}/docs/`) {
-    return `${BASE_PATH}/docs/index.md`;
-  }
-  if (pathname === '/mcp' || pathname === '/mcp/' || pathname === `${BASE_PATH}/mcp` || pathname === `${BASE_PATH}/mcp/`) {
-    return `${BASE_PATH}/mcp/index.md`;
+  const sections = ['docs', 'mcp', 'about', 'contact', 'privacy'];
+  for (const section of sections) {
+    if (clean === `/${section}` || clean === `/${section}/` || clean === `/${section}/index.html`) {
+      return `${BASE_PATH}/${section}/index.md`;
+    }
   }
   return null;
+}
+
+function toOriginPath(pathname) {
+  if (pathname === BASE_PATH || pathname.startsWith(`${BASE_PATH}/`)) {
+    return pathname === BASE_PATH ? `${BASE_PATH}/` : pathname;
+  }
+  return `${BASE_PATH}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+}
+
+function isTextContentType(contentType) {
+  if (!contentType) return false;
+  const lower = contentType.toLowerCase();
+  return (
+    lower.includes('text/') ||
+    lower.includes('application/json') ||
+    lower.includes('application/xml') ||
+    lower.includes('application/ld+json')
+  );
+}
+
+function rewriteUrlsForOrigin(text, requestOrigin) {
+  if (!requestOrigin || requestOrigin === ORIGIN) return text;
+  return text
+    .replaceAll(ORIGIN_BASE_URL, requestOrigin)
+    .replaceAll(`href="${BASE_PATH}/`, 'href="/')
+    .replaceAll(`src="${BASE_PATH}/`, 'src="/');
 }
 
 export default {
@@ -55,26 +101,32 @@ export default {
           headers: { 'User-Agent': request.headers.get('User-Agent') || 'Agentic-Worker' }
         });
         if (mdResponse.ok) {
+          const rawBody = await mdResponse.text();
+          const body = rewriteUrlsForOrigin(rawBody, url.origin);
           const headers = new Headers(mdResponse.headers);
           headers.set('Content-Type', 'text/markdown; charset=utf-8');
           appendVaryAccept(headers);
-          return new Response(mdResponse.body, { status: 200, headers });
+          return new Response(body, { status: 200, headers });
         }
       }
     }
 
-    const targetPath = url.pathname === '/' ? `${BASE_PATH}/` : url.pathname;
+    const targetPath = toOriginPath(url.pathname);
     const originResponse = await fetch(`${ORIGIN}${targetPath}${url.search}`, {
       method: request.method,
-      headers: request.headers,
+      headers: {
+        'User-Agent': request.headers.get('User-Agent') || 'Agentic-Worker',
+        'Accept': request.headers.get('Accept') || '*/*'
+      },
       redirect: 'follow'
     });
 
     if (originResponse.status === 404 && wantsMarkdown) {
       const md404 = await fetch(`${ORIGIN}${BASE_PATH}/404.md`);
-      const body = md404.ok
+      const raw404 = md404.ok
         ? await md404.text()
-        : `# 404 Not Found\n\nThe requested path \`${url.pathname}\` was not found on Michal Zak Online CV.\n\n- [LLMs.txt](${ORIGIN}${BASE_PATH}/llms.txt)\n- [API Documentation](${ORIGIN}${BASE_PATH}/docs/)\n- [Sitemap](${ORIGIN}${BASE_PATH}/sitemap.xml)\n`;
+        : `# 404 Not Found\n\nThe requested path \`${url.pathname}\` was not found on Michal Zak Online CV.\n\n- [LLMs.txt](${ORIGIN_BASE_URL}/llms.txt)\n- [API Documentation](${ORIGIN_BASE_URL}/docs/)\n- [Sitemap](${ORIGIN_BASE_URL}/sitemap.xml)\n`;
+      const body = rewriteUrlsForOrigin(raw404, url.origin);
       const headers = new Headers(originResponse.headers);
       headers.set('Content-Type', 'text/markdown; charset=utf-8');
       appendVaryAccept(headers);
@@ -86,6 +138,17 @@ export default {
       headers.set('Content-Type', 'text/markdown; charset=utf-8');
     }
     appendVaryAccept(headers);
+
+    if (isTextContentType(headers.get('Content-Type'))) {
+      const rawText = await originResponse.text();
+      const rewritten = rewriteUrlsForOrigin(rawText, url.origin);
+      return new Response(rewritten, {
+        status: originResponse.status,
+        statusText: originResponse.statusText,
+        headers
+      });
+    }
+
     return new Response(originResponse.body, {
       status: originResponse.status,
       statusText: originResponse.statusText,

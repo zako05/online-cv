@@ -20,8 +20,11 @@
   <meta property="og:site_name" content="{{ site.title }} Online CV">
   <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }} | {{ site.data.data.sidebar.tagline }}{% endif %}">
   <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines }}">
-  <meta property="og:type" content="profile">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url | replace: 'index.html', '' }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png">
 
   <!-- Agent & Developer Resource Discovery -->
   <link rel="alternate" type="text/markdown" href="{{ site.url }}{{ site.baseurl }}{{ page.markdown_url | default: '/index.md' }}" title="Markdown version">
@@ -78,6 +81,19 @@
         "url": "{{ site.url }}{{ site.baseurl }}/",
         "email": "mailto:{{ site.data.data.sidebar.email }}",
         "telephone": "{{ site.data.data.sidebar.phone }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bratislava",
+          "addressCountry": "SK"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "professional inquiries",
+          "email": "{{ site.data.data.sidebar.email }}",
+          "telephone": "{{ site.data.data.sidebar.phone }}",
+          "url": "{{ site.url }}{{ site.baseurl }}/contact/",
+          "availableLanguage": ["English", "Czech", "Slovak"]
+        },
         "knowsAbout": [
           {{ site.data.data.sidebar.tagline | jsonify }}{% for skill in site.data.data.skills.toolset %},
           {{ skill.name | jsonify }}{% endfor %}
@@ -91,16 +107,39 @@
         ]
       },
       {
-        "@type": "ProfessionalService",
-        "@id": "{{ site.url }}{{ site.baseurl }}/#service",
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "{{ site.url }}{{ site.baseurl }}/#organization",
         "name": "{{ site.data.data.sidebar.name }} - {{ site.data.data.sidebar.tagline }}",
         "url": "{{ site.url }}{{ site.baseurl }}/",
+        "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png",
+        "image": "{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png",
         "description": "{{ site.description | strip_newlines }}",
+        "email": "{{ site.data.data.sidebar.email }}",
+        "telephone": "{{ site.data.data.sidebar.phone }}",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bratislava",
+          "addressCountry": "SK"
+        },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "{{ site.data.data.sidebar.email }}",
+            "telephone": "{{ site.data.data.sidebar.phone }}",
+            "url": "{{ site.url }}{{ site.baseurl }}/contact/",
+            "availableLanguage": ["English", "Czech", "Slovak"]
+          }
+        ],
         "serviceType": {{ site.data.data.sidebar.tagline | jsonify }},
         "keywords": "{{ site.data.data.sidebar.tagline }}, {{ skill_names | join: ', ' }}",
         "knowsAbout": [
           {{ site.data.data.sidebar.tagline | jsonify }}{% for skill in site.data.data.skills.toolset %},
           {{ skill.name | jsonify }}{% endfor %}
+        ],
+        "sameAs": [
+          "https://github.com/{{ site.data.data.sidebar.github }}",
+          "https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}"
         ],
         "provider": {
           "@id": "{{ site.url }}{{ site.baseurl }}/#person"

@@ -1,0 +1,51 @@
+---
+layout: default
+title: "About Michal Zak | Senior Test Automation Engineer"
+description: "About Michal Zak, Senior Test Automation Engineer with 8+ years of experience in E2E, API, and performance test automation."
+permalink: /about/
+markdown_url: /about/index.md
+minimal_sidebar: true
+---
+
+<section class="section">
+  <h1 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-user fa-stack-1x fa-inverse"></i>
+    </span>
+    About {{ site.data.data.sidebar.name }}
+  </h1>
+
+  <div class="summary">
+    <p>
+      <strong>{{ site.data.data.sidebar.name }}</strong> is a <strong>{{ site.data.data.sidebar.tagline }}</strong> with more than 8 years of hands-on experience designing, building, and scaling test automation frameworks for web, desktop (Electron), and API platforms across fintech/crypto hardware wallets, clinical supply chain logistics, 3D design tools, venture capital SaaS, biometric access control, and real estate CRM systems.
+    </p>
+
+    <h2>Engineering Philosophy</h2>
+    {{ site.data.data.career-profile.summary | markdownify }}
+
+    <h2>Core Areas of Expertise</h2>
+    <ul>
+      {% for skill in site.data.data.skills.toolset %}
+      <li><strong>{{ skill.name }}</strong> ({{ skill.level }} proficiency)</li>
+      {% endfor %}
+    </ul>
+
+    <h2>Education &amp; Certifications</h2>
+    <ul>
+      {% for edu in site.data.data.education %}
+      <li><strong>{{ edu.degree }}</strong> — {{ edu.university }}</li>
+      {% endfor %}
+      {% for cert in site.data.data.certificates %}
+      <li><strong>{{ cert.title }}</strong></li>
+      {% endfor %}
+    </ul>
+
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/">Full Online Curriculum Vitae</a></li>
+      <li><a href="{{ site.baseurl }}/contact/">Contact {{ site.data.data.sidebar.name }}</a></li>
+      <li><a href="{{ site.baseurl }}/docs/">Online CV API Documentation</a></li>
+    </ul>
+  </div>
+</section>

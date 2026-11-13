@@ -58,6 +58,12 @@ class AgenticApp
                        File.join(@site_dir, 'docs', 'index.md')
                      when '/mcp', '/mcp/', '/mcp/index.html'
                        File.join(@site_dir, 'mcp', 'index.md')
+                     when '/about', '/about/', '/about/index.html'
+                       File.join(@site_dir, 'about', 'index.md')
+                     when '/contact', '/contact/', '/contact/index.html'
+                       File.join(@site_dir, 'contact', 'index.md')
+                     when '/privacy', '/privacy/', '/privacy/index.html'
+                       File.join(@site_dir, 'privacy', 'index.md')
                      end
       if md_candidate && File.file?(md_candidate)
         body = File.read(md_candidate, encoding: 'UTF-8')

@@ -125,25 +125,41 @@ class AgenticReadinessTest < Minitest::Test
     assert_kind_of Array, cv_data['skills']
     refute_empty cv_data['skills']
 
-    # /llms.txt follows llmstxt.org format
+    # /llms.txt follows llmstxt.org format and includes When to Use section
     llms_txt = File.read(File.join(SITE_DIR, 'llms.txt'))
     assert_match(/\A# Michal Zak - Senior Test Automation Engineer/, llms_txt)
     assert_includes llms_txt, '> Freelance Software Test Engineer'
+    assert_includes llms_txt, '## When to Use This'
     assert_includes llms_txt, 'https://zako05.github.io/online-cv/docs/'
     assert_includes llms_txt, 'https://zako05.github.io/online-cv/mcp/'
     assert_includes llms_txt, 'https://zako05.github.io/online-cv/api/cv.json'
     assert_includes llms_txt, 'https://github.com/zako05'
 
-    # /sitemap.xml is valid XML
+    # /sitemap.xml is valid XML and includes lastmod dates
     sitemap_raw = File.read(File.join(SITE_DIR, 'sitemap.xml'))
     doc = REXML::Document.new(sitemap_raw)
     locs = []
+    lastmods = []
     doc.elements.each('urlset/url/loc') { |el| locs << el.text }
+    doc.elements.each('urlset/url/lastmod') { |el| lastmods << el.text }
     assert_includes locs, 'https://zako05.github.io/online-cv/'
+    assert_includes locs, 'https://zako05.github.io/online-cv/about/'
+    assert_includes locs, 'https://zako05.github.io/online-cv/contact/'
+    assert_includes locs, 'https://zako05.github.io/online-cv/privacy/'
     assert_includes locs, 'https://zako05.github.io/online-cv/docs/'
     assert_includes locs, 'https://zako05.github.io/online-cv/mcp/'
     assert_includes locs, 'https://zako05.github.io/online-cv/llms.txt'
     assert_includes locs, 'https://zako05.github.io/online-cv/api/cv.json'
+    assert_equal locs.length, lastmods.length
+
+    # Trust anchor pages (/about/, /contact/, /privacy/) exist with >= 500 chars each
+    %w[about contact privacy].each do |page|
+      html = File.read(File.join(SITE_DIR, page, 'index.html'))
+      md = File.read(File.join(SITE_DIR, page, 'index.md'))
+      assert_operator html.length, :>=, 500, "Expected /#{page}/ HTML to be >= 500 chars"
+      assert_operator md.length, :>=, 500, "Expected /#{page}/index.md to be >= 500 chars"
+      assert_includes html, 'sidebar-minimal'
+    end
 
     # Homepage links to GitHub over HTTPS and links to docs, mcp, llms.txt
     index_html = File.read(File.join(SITE_DIR, 'index.html'))
@@ -158,6 +174,9 @@ class AgenticReadinessTest < Minitest::Test
     index_html = File.read(File.join(SITE_DIR, 'index.html'))
 
     assert_includes index_html, '<title>Michal Zak | Senior Test Automation Engineer</title>'
+    assert_includes index_html, '<meta property="og:image"'
+    assert_includes index_html, '<meta property="og:type"'
+    assert_includes index_html, '<link rel="canonical"'
     assert_match(/<meta name="keywords" content="[^"]*Senior Test Automation Engineer[^"]*E2E Test Automation/, index_html)
 
     json_ld_match = index_html.match(/<script type="application\/ld\+json">\s*(\{.*?\})\s*<\/script>/m)
@@ -167,8 +186,11 @@ class AgenticReadinessTest < Minitest::Test
     graph = json_ld['@graph']
     refute_nil graph
 
-    service = graph.find { |node| node['@type'] == 'ProfessionalService' }
+    service = graph.find { |node| Array(node['@type']).include?('ProfessionalService') }
     refute_nil service
+    assert_includes Array(service['@type']), 'Organization'
+    assert_equal 'SK', service.dig('address', 'addressCountry')
+    refute_empty service['contactPoint']
     assert_equal 'Senior Test Automation Engineer', service['serviceType']
     assert_includes service['knowsAbout'], 'Senior Test Automation Engineer'
     assert_includes service['knowsAbout'], 'E2E Test Automation'
