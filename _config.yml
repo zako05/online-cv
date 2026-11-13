@@ -2,6 +2,7 @@
 
 # Site Settings
 title: Michal Zak
+url: 'https://zako05.github.io'
 baseurl: '/online-cv' #change it according to your repository name
 description: Freelance Software Test Engineer with 8+ years of experiences in Software Development 
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
@@ -31,3 +32,14 @@ compress_html: # - http://jch.penibelst.de/
 port: 4000
 host: 0.0.0.0
 safe: false
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE.txt
+  - README.md
+  - vendor
+  - tags
+  - edge
+  - scripts
+  - test

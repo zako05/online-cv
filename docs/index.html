@@ -1,0 +1,68 @@
+---
+layout: default
+title: "Michal Zak Online CV API Documentation"
+description: "Official API documentation and machine-readable endpoint reference for Michal Zak Online CV."
+permalink: /docs/
+markdown_url: /docs/index.md
+minimal_sidebar: true
+---
+
+<section class="section">
+  <h1 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-code fa-stack-1x fa-inverse"></i>
+    </span>
+    Michal Zak Online CV API Documentation
+  </h1>
+
+  <div class="summary">
+    <p>
+      <strong>Michal Zak Online CV</strong> provides static, zero-authentication HTTP endpoints in JSON, Markdown, and
+      <code>llms.txt</code> formats so AI agents, crawlers, and developer tools can programmatically inspect work experience,
+      technical skills, education, and certifications.
+    </p>
+
+    <h2>Base URL</h2>
+    <pre><code>{{ site.url }}{{ site.baseurl }}</code></pre>
+
+    <h2>API &amp; Machine-Readable Endpoints</h2>
+    <ul>
+      <li>
+        <strong><code>GET {{ site.baseurl }}/api/cv.json</code></strong> — Structured JSON API returning profile metadata,
+        contact links, career summary, work experiences, technical skills, education, certificates, and languages.
+      </li>
+      <li>
+        <strong><code>GET {{ site.baseurl }}/index.md</code></strong> — Full curriculum vitae formatted in clean Markdown.
+      </li>
+      <li>
+        <strong><code>GET {{ site.baseurl }}/llms.txt</code></strong> — Standard <a href="https://llmstxt.org" target="_blank">llmstxt.org</a>
+        index file linking all primary resources and documentation.
+      </li>
+      <li>
+        <strong><code>GET {{ site.baseurl }}/llms-full.txt</code></strong> — Comprehensive plain-text/Markdown context bundle.
+      </li>
+      <li>
+        <strong><code>GET {{ site.baseurl }}/sitemap.xml</code></strong> — XML Sitemap listing all canonical URLs.
+      </li>
+    </ul>
+
+    <h2>Example Request</h2>
+    <pre><code>curl -sS {{ site.url }}{{ site.baseurl }}/api/cv.json</code></pre>
+
+    <h2>Markdown Content Negotiation</h2>
+    <p>
+      Agents requesting <code>Accept: text/markdown</code> can retrieve Markdown directly from the homepage or via the explicit
+      <code>.md</code> endpoints:
+    </p>
+    <pre><code>curl -sS -L -H "Accept: text/markdown" {{ site.url }}{{ site.baseurl }}/
+curl -sS -L {{ site.url }}{{ site.baseurl }}/index.md</code></pre>
+
+    <h2>Related Developer Resources</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/mcp/">Michal Zak Online CV MCP Server &amp; CLI Guide</a></li>
+      <li><a href="{{ site.baseurl }}/">Back to Online CV Homepage</a></li>
+      <li><a href="https://github.com/{{ site.data.data.sidebar.github }}/online-cv" target="_blank">GitHub Repository (zako05/online-cv)</a></li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+layout: null
+permalink: /docs/index.md
+---
+# Michal Zak Online CV API Documentation
+
+> Official API documentation and machine-readable endpoint reference for Michal Zak Online CV.
+
+**Michal Zak Online CV** provides zero-authentication HTTP endpoints in JSON, Markdown, and `llms.txt` formats so AI agents, crawlers, and developer tools can programmatically query work experience, technical skills, education, and certifications.
+
+## Base URL
+
+`{{ site.url }}{{ site.baseurl }}`
+
+## Endpoints
+
+- **`GET {{ site.baseurl }}/api/cv.json`** — Structured JSON API returning profile metadata, contact links, career summary, work experiences, technical skills, education, certificates, and languages.
+- **`GET {{ site.baseurl }}/index.md`** — Full curriculum vitae formatted in clean Markdown.
+- **`GET {{ site.baseurl }}/llms.txt`** — Standard `llms.txt` index file linking all primary resources and documentation.
+- **`GET {{ site.baseurl }}/llms-full.txt`** — Comprehensive plain-text/Markdown context bundle.
+- **`GET {{ site.baseurl }}/sitemap.xml`** — XML Sitemap listing all canonical URLs.
+
+## Example Requests
+
+```bash
+# Query the structured JSON API
+curl -sS {{ site.url }}{{ site.baseurl }}/api/cv.json
+
+# Request Markdown representation
+curl -sS -L -H "Accept: text/markdown" {{ site.url }}{{ site.baseurl }}/
+```
+
+## Related Resources
+
+- [Michal Zak Online CV MCP Server & CLI Guide]({{ site.url }}{{ site.baseurl }}/mcp/)
+- [Online CV Homepage]({{ site.url }}{{ site.baseurl }}/)
+- [GitHub Repository (zako05/online-cv)](https://github.com/{{ site.data.data.sidebar.github }}/online-cv)

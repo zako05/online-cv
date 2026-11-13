@@ -1,0 +1,60 @@
+---
+layout: null
+permalink: /llms-full.txt
+---
+# {{ site.data.data.sidebar.name }} — {{ site.data.data.sidebar.tagline }} (Full Context)
+
+> {{ site.description | strip_newlines }}
+
+Canonical URL: {{ site.url }}{{ site.baseurl }}/
+Markdown URL: {{ site.url }}{{ site.baseurl }}/index.md
+JSON API URL: {{ site.url }}{{ site.baseurl }}/api/cv.json
+API Docs URL: {{ site.url }}{{ site.baseurl }}/docs/
+MCP Docs URL: {{ site.url }}{{ site.baseurl }}/mcp/
+
+## Contact & Social Profiles
+
+- Name: {{ site.data.data.sidebar.name }}
+- Role: {{ site.data.data.sidebar.tagline }}
+- Email: {{ site.data.data.sidebar.email }}
+- Phone: {{ site.data.data.sidebar.phone }}
+- GitHub: https://github.com/{{ site.data.data.sidebar.github }}
+- LinkedIn: https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}
+- Twitter: https://twitter.com/{{ site.data.data.sidebar.twitter }}
+- Stack Overflow: https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}
+- HackerRank: https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}
+- TestAutomationU: https://testautomationu.applitools.com/me.html#{{ site.data.data.sidebar.tau }}
+
+## {{ site.data.data.career-profile.title }}
+
+{{ site.data.data.career-profile.summary | strip }}
+
+## Work Experience
+{% for exp in site.data.data.experiences %}
+### {{ exp.role }} | {{ exp.company }} ({{ exp.time }})
+{% if exp.projects %}
+{{ exp.projects | strip }}
+{% endif %}{% if exp.details %}
+{{ exp.details | strip }}
+{% endif %}{% if exp.techStack %}
+Tech Stack: {{ exp.techStack }}
+{% endif %}{% endfor %}
+## Technical Skills & Proficiency
+{% for skill in site.data.data.skills.toolset %}
+- {{ skill.name }} ({{ skill.level }}){% endfor %}
+
+## Education
+{% for edu in site.data.data.education %}
+- {{ edu.degree }} — {{ edu.university }}{% endfor %}
+
+## Certifications
+{% for cert in site.data.data.certificates %}
+- {{ cert.title }}{% endfor %}
+
+## Languages
+{% for lang in site.data.data.sidebar.languages %}
+- {{ lang.idiom }}: {{ lang.level }}{% endfor %}
+
+## Interests
+{% for interest in site.data.data.interests %}
+- {{ interest.item }}{% endfor %}

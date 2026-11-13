@@ -44,6 +44,9 @@ p {
     height: 100%;
     min-height: 800px;
     color: #fff;
+    &.sidebar-minimal {
+        min-height: 0;
+    }
     a {
         color: #fff;
     }

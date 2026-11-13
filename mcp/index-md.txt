@@ -1,0 +1,45 @@
+---
+layout: null
+permalink: /mcp/index.md
+---
+# Michal Zak Online CV MCP Server & CLI Integration
+
+> Model Context Protocol (MCP) server configuration and CLI usage guide for Michal Zak Online CV.
+
+Connect AI assistants and CLI tools to **Michal Zak Online CV** using the Model Context Protocol (MCP) or standard HTTP tools.
+
+## MCP Configuration (Fetch Server)
+
+```json
+{
+  "mcpServers": {
+    "online-cv-fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    }
+  }
+}
+```
+
+## Recommended Agent Target URLs
+
+- **LLMs Discovery**: `{{ site.url }}{{ site.baseurl }}/llms.txt`
+- **Full Context**: `{{ site.url }}{{ site.baseurl }}/llms-full.txt`
+- **Markdown CV**: `{{ site.url }}{{ site.baseurl }}/index.md`
+- **JSON API**: `{{ site.url }}{{ site.baseurl }}/api/cv.json`
+
+## CLI Usage Examples
+
+```bash
+# Fetch Markdown CV
+curl -sS {{ site.url }}{{ site.baseurl }}/index.md
+
+# Query skills using curl and jq
+curl -sS {{ site.url }}{{ site.baseurl }}/api/cv.json | jq '.skills'
+```
+
+## Related Links
+
+- [Michal Zak Online CV API Documentation]({{ site.url }}{{ site.baseurl }}/docs/)
+- [Online CV Homepage]({{ site.url }}{{ site.baseurl }}/)
+- [GitHub Repository (zako05/online-cv)](https://github.com/{{ site.data.data.sidebar.github }}/online-cv)

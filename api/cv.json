@@ -1,0 +1,35 @@
+---
+layout: null
+permalink: /api/cv.json
+---
+{
+  "name": {{ site.data.data.sidebar.name | jsonify }},
+  "tagline": {{ site.data.data.sidebar.tagline | jsonify }},
+  "description": {{ site.description | strip_newlines | jsonify }},
+  "url": "{{ site.url }}{{ site.baseurl }}/",
+  "endpoints": {
+    "html": "{{ site.url }}{{ site.baseurl }}/",
+    "markdown": "{{ site.url }}{{ site.baseurl }}/index.md",
+    "llms_txt": "{{ site.url }}{{ site.baseurl }}/llms.txt",
+    "llms_full_txt": "{{ site.url }}{{ site.baseurl }}/llms-full.txt",
+    "docs": "{{ site.url }}{{ site.baseurl }}/docs/",
+    "mcp": "{{ site.url }}{{ site.baseurl }}/mcp/",
+    "sitemap": "{{ site.url }}{{ site.baseurl }}/sitemap.xml"
+  },
+  "contact": {
+    "email": {{ site.data.data.sidebar.email | jsonify }},
+    "phone": {{ site.data.data.sidebar.phone | jsonify }},
+    "github": "https://github.com/{{ site.data.data.sidebar.github }}",
+    "linkedin": "https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}",
+    "twitter": "https://twitter.com/{{ site.data.data.sidebar.twitter }}",
+    "stack_overflow": "https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}",
+    "hackerrank": "https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}"
+  },
+  "career_profile": {{ site.data.data.career-profile.summary | strip | jsonify }},
+  "experiences": {{ site.data.data.experiences | jsonify }},
+  "skills": {{ site.data.data.skills.toolset | jsonify }},
+  "education": {{ site.data.data.education | jsonify }},
+  "certificates": {{ site.data.data.certificates | jsonify }},
+  "languages": {{ site.data.data.sidebar.languages | jsonify }},
+  "interests": {{ site.data.data.interests | jsonify }}
+}

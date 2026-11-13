@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /404.md
+---
+# 404 Not Found — Michal Zak Online CV
+
+The requested path does not exist on Michal Zak's Online CV (HTTP 404 Not Found). Please verify the URL or use one of the documented entry points below to access the curriculum vitae and structured developer endpoints.
+
+## Available Resources
+
+- [Online CV Homepage (HTML)]({{ site.url }}{{ site.baseurl }}/)
+- [Online CV Homepage (Markdown)]({{ site.url }}{{ site.baseurl }}/index.md)
+- [LLMs Discovery File (llms.txt)]({{ site.url }}{{ site.baseurl }}/llms.txt)
+- [Full LLM Context (llms-full.txt)]({{ site.url }}{{ site.baseurl }}/llms-full.txt)
+- [Michal Zak Online CV API Documentation]({{ site.url }}{{ site.baseurl }}/docs/)
+- [Michal Zak Online CV MCP Guide]({{ site.url }}{{ site.baseurl }}/mcp/)
+- [Structured CV JSON API]({{ site.url }}{{ site.baseurl }}/api/cv.json)
+- [XML Sitemap]({{ site.url }}{{ site.baseurl }}/sitemap.xml)
