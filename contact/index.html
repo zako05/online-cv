@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Contact Michal Zak | Senior Test Automation Engineer"
+description: "Contact information and professional profiles for Michal Zak, Senior Test Automation Engineer based in Bratislava, Slovakia."
+permalink: /contact/
+markdown_url: /contact/index.md
+minimal_sidebar: true
+---
+
+<section class="section">
+  <h1 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+    </span>
+    Contact {{ site.data.data.sidebar.name }}
+  </h1>
+
+  <div class="summary">
+    <p>
+      Get in touch with <strong>{{ site.data.data.sidebar.name }}</strong> regarding <strong>{{ site.data.data.sidebar.tagline }}</strong> roles, freelance QA automation consulting, E2E/API testing architecture with Playwright or Cypress.io, and CI/CD test pipeline engineering.
+    </p>
+
+    <h2>Direct Contact Information</h2>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:{{ site.data.data.sidebar.email }}">{{ site.data.data.sidebar.email }}</a></li>
+      <li><strong>Phone:</strong> <a href="tel:{{ site.data.data.sidebar.phone }}">{{ site.data.data.sidebar.phone }}</a></li>
+      <li><strong>Location:</strong> Bratislava, Slovakia (remote &amp; Central Europe)</li>
+      <li><strong>Languages:</strong>
+        {% for lang in site.data.data.sidebar.languages %}{{ lang.idiom }} ({{ lang.level }}){% unless forloop.last %}, {% endunless %}{% endfor %}
+      </li>
+    </ul>
+
+    <h2>Professional &amp; Developer Profiles</h2>
+    <ul>
+      <li><strong>GitHub:</strong> <a href="https://github.com/{{ site.data.data.sidebar.github }}" rel="me" target="_blank">https://github.com/{{ site.data.data.sidebar.github }}</a></li>
+      <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}" target="_blank">https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}</a></li>
+      <li><strong>Twitter / X:</strong> <a href="https://twitter.com/{{ site.data.data.sidebar.twitter }}" target="_blank">https://twitter.com/{{ site.data.data.sidebar.twitter }}</a></li>
+      <li><strong>Stack Overflow:</strong> <a href="https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}" target="_blank">https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}</a></li>
+      <li><strong>HackerRank:</strong> <a href="https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}" target="_blank">https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}</a></li>
+    </ul>
+
+    <h2>Navigation</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/">Full Online Curriculum Vitae</a></li>
+      <li><a href="{{ site.baseurl }}/about/">About {{ site.data.data.sidebar.name }}</a></li>
+      <li><a href="{{ site.baseurl }}/privacy/">Privacy Policy</a></li>
+    </ul>
+  </div>
+</section>

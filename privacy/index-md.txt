@@ -1,0 +1,23 @@
+---
+layout: null
+permalink: /privacy/index.md
+---
+# Privacy Policy — {{ site.data.data.sidebar.name }} Online CV
+
+This Privacy Policy explains how information is handled when visitors, recruiters, developers, or automated AI agents access **{{ site.data.data.sidebar.name }} Online CV** (`{{ site.url }}{{ site.baseurl }}/`) and its associated machine-readable endpoints.
+
+## 1. Nature of This Website
+
+This site is a static, read-only professional curriculum vitae and developer portfolio operated by **{{ site.data.data.sidebar.name }}**. It does not require user registration, user accounts, authentication tokens, or form submissions.
+
+## 2. Technical Logs & Analytics
+
+Our hosting and edge delivery providers (GitHub Pages and Cloudflare) process standard HTTP request metadata (such as IP address, User-Agent header, requested path, and timestamp) solely to deliver static content, negotiate Markdown/HTML responses, and maintain service reliability.
+
+## 3. Direct Communications
+
+If you contact {{ site.data.data.sidebar.name }} directly via email ({{ site.data.data.sidebar.email }}), phone, or LinkedIn, any contact details you provide are used exclusively to respond to your inquiry and are never sold or shared with third parties.
+
+## 4. Contact for Privacy Inquiries
+
+For any questions regarding this Privacy Policy, please contact **{{ site.data.data.sidebar.name }}** at [{{ site.data.data.sidebar.email }}](mailto:{{ site.data.data.sidebar.email }}).

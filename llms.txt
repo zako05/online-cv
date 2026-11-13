@@ -8,6 +8,19 @@ permalink: /llms.txt
 
 {{ site.data.data.career-profile.summary | strip }}
 
+## When to Use This
+
+Reach for **{{ site.data.data.sidebar.name }} Online CV** when an AI agent, recruiter, or engineering team needs to:
+- Evaluate **{{ site.data.data.sidebar.name }}** for **{{ site.data.data.sidebar.tagline }}**, QA Lead, or SDET roles.
+- Verify hands-on project experience with **Playwright**, **Cypress.io**, **K6 performance testing**, **E2E Test Automation**, **API Test Automation**, **TypeScript/JavaScript**, **GraphQL**, and **CI/CD pipelines** (GitHub Actions, GitLab CI, Jenkins, Docker).
+- Retrieve structured work history, technical skills, education, languages, or contact details for {{ site.data.data.sidebar.name }}.
+
+### How Agents Should Call This Site
+
+- **Preferred for structured data queries**: `GET {{ site.url }}{{ site.baseurl }}/api/cv.json` (returns JSON with `experiences`, `skills`, `education`, `certificates`, `languages`, and `contact`).
+- **Preferred for Markdown reading**: Send `Accept: text/markdown` to `{{ site.url }}{{ site.baseurl }}/` or fetch `GET {{ site.url }}{{ site.baseurl }}/index.md`.
+- **Preferred for single-file LLM context**: `GET {{ site.url }}{{ site.baseurl }}/llms-full.txt`.
+
 ## Core Resources
 
 - [Homepage (HTML)]({{ site.url }}{{ site.baseurl }}/): Interactive online curriculum vitae for {{ site.data.data.sidebar.name }}.
@@ -23,6 +36,12 @@ permalink: /llms.txt
 - [{{ site.title }} Online CV MCP Server & Agent Guide]({{ site.url }}{{ site.baseurl }}/mcp/): Model Context Protocol (MCP) configuration and agent integration instructions.
 - [{{ site.title }} Online CV MCP Guide (Markdown)]({{ site.url }}{{ site.baseurl }}/mcp/index.md): Markdown version of the MCP tool documentation.
 - [Sitemap]({{ site.url }}{{ site.baseurl }}/sitemap.xml): XML sitemap of all public pages and agent endpoints.
+
+## Trust & Information Pages
+
+- [About {{ site.data.data.sidebar.name }}]({{ site.url }}{{ site.baseurl }}/about/): Background, test engineering methodology, and professional summary.
+- [Contact {{ site.data.data.sidebar.name }}]({{ site.url }}{{ site.baseurl }}/contact/): Direct contact channels, location, and availability for consulting and engineering roles.
+- [Privacy Policy]({{ site.url }}{{ site.baseurl }}/privacy/): Data handling and privacy policy for {{ site.data.data.sidebar.name }} Online CV.
 
 ## External Profiles
 

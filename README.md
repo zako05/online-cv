@@ -17,6 +17,12 @@ bundle exec jekyll build
 ruby test/agentic_readiness_test.rb
 ```
 
+## Deploy Cloudflare Worker (Root Domain & Markdown Negotiation)
+
+```bash
+npx wrangler deploy
+```
+
 ## Pages & Machine-Readable Endpoints
 
 | Resource | Production URL | Local URL |
@@ -29,6 +35,9 @@ ruby test/agentic_readiness_test.rb
 | **API Documentation (Markdown)** | https://zako05.github.io/online-cv/docs/index.md | http://localhost:4000/online-cv/docs/index.md |
 | **MCP Server & CLI Guide (HTML)** | https://zako05.github.io/online-cv/mcp/ | http://localhost:4000/online-cv/mcp/ |
 | **MCP Server & CLI Guide (Markdown)** | https://zako05.github.io/online-cv/mcp/index.md | http://localhost:4000/online-cv/mcp/index.md |
+| **About Page (HTML & Markdown)** | https://zako05.github.io/online-cv/about/ | http://localhost:4000/online-cv/about/ (`/about/index.md`) |
+| **Contact Page (HTML & Markdown)** | https://zako05.github.io/online-cv/contact/ | http://localhost:4000/online-cv/contact/ (`/contact/index.md`) |
+| **Privacy Policy (HTML & Markdown)** | https://zako05.github.io/online-cv/privacy/ | http://localhost:4000/online-cv/privacy/ (`/privacy/index.md`) |
 | **LLMs Discovery (`llms.txt`)** | https://zako05.github.io/online-cv/llms.txt | http://localhost:4000/online-cv/llms.txt |
 | **Full LLM Context (`llms-full.txt`)** | https://zako05.github.io/online-cv/llms-full.txt | http://localhost:4000/online-cv/llms-full.txt |
 | **XML Sitemap (`sitemap.xml`)** | https://zako05.github.io/online-cv/sitemap.xml | http://localhost:4000/online-cv/sitemap.xml |
