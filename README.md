@@ -31,6 +31,7 @@ npx wrangler deploy
 | **Online CV (Markdown)** | https://zako05.github.io/online-cv/index.md | http://localhost:4000/online-cv/index.md |
 | **Printable PDF Template** | https://zako05.github.io/online-cv/cv-pdf.html | http://localhost:4000/online-cv/cv-pdf.html |
 | **Structured JSON API** | https://zako05.github.io/online-cv/api/cv.json | http://localhost:4000/online-cv/api/cv.json |
+| **OpenAPI 3.0 Specification** | https://zako05.github.io/online-cv/openapi.json | http://localhost:4000/online-cv/openapi.json |
 | **API Documentation (HTML)** | https://zako05.github.io/online-cv/docs/ | http://localhost:4000/online-cv/docs/ |
 | **API Documentation (Markdown)** | https://zako05.github.io/online-cv/docs/index.md | http://localhost:4000/online-cv/docs/index.md |
 | **MCP Server & CLI Guide (HTML)** | https://zako05.github.io/online-cv/mcp/ | http://localhost:4000/online-cv/mcp/ |

@@ -64,4 +64,10 @@ permalink: /sitemap.xml
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>{{ site.url }}{{ site.baseurl }}/openapi.json</loc>
+    <lastmod>{{ site.time | date: "%Y-%m-%d" }}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

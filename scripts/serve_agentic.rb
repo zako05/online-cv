@@ -3,6 +3,7 @@
 
 require 'socket'
 require 'uri'
+require 'json'
 
 SITE_DIR = File.expand_path('../_site', __dir__)
 BASE_PATH = '/online-cv'
@@ -80,6 +81,17 @@ class AgenticApp
         body = content_type.include?('charset=utf-8') ? File.read(fs_path, encoding: 'UTF-8') : File.binread(fs_path)
         return [200, 'OK', { 'Content-Type' => content_type, 'Vary' => 'Accept' }, method == 'HEAD' ? '' : body]
       end
+    end
+
+    if rel_path.start_with?('/api/') && !File.file?(File.expand_path(File.join(@site_dir, rel_path)))
+      err = {
+        'error' => 'API Endpoint Not Found',
+        'code' => 'endpoint_not_found',
+        'status' => 404,
+        'message' => "The API endpoint \"#{rel_path}\" does not exist.",
+        'resolution' => 'Query GET /online-cv/api/cv.json or inspect /online-cv/openapi.json.'
+      }
+      return [404, 'Not Found', { 'Content-Type' => 'application/json; charset=utf-8', 'Vary' => 'Accept' }, JSON.pretty_generate(err)]
     end
 
     if wants_md
