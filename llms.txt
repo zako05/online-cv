@@ -1,0 +1,32 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.data.data.sidebar.name }} - {{ site.data.data.sidebar.tagline }}
+
+> {{ site.description | strip_newlines }}
+
+{{ site.data.data.career-profile.summary | strip }}
+
+## Core Resources
+
+- [Homepage (HTML)]({{ site.url }}{{ site.baseurl }}/): Interactive online curriculum vitae for {{ site.data.data.sidebar.name }}.
+- [Homepage (Markdown)]({{ site.url }}{{ site.baseurl }}/index.md): Clean Markdown representation of the complete curriculum vitae.
+- [Full LLM Context]({{ site.url }}{{ site.baseurl }}/llms-full.txt): Complete plain-text/Markdown profile including work history, projects, skills, education, and certificates.
+- [Online CV JSON API]({{ site.url }}{{ site.baseurl }}/api/cv.json): Structured machine-readable JSON endpoint containing all CV sections.
+{% for file in site.data.data.sidebar.files %}- [Downloadable CV ({{ file.type }})]({{ site.url }}{{ site.baseurl }}/{{ file.path }}): Printable {{ file.type }} curriculum vitae.
+{% endfor %}
+## Developer & Agent Documentation
+
+- [{{ site.title }} Online CV API Documentation]({{ site.url }}{{ site.baseurl }}/docs/): Official API documentation for querying structured CV data and Markdown endpoints.
+- [{{ site.title }} Online CV API Documentation (Markdown)]({{ site.url }}{{ site.baseurl }}/docs/index.md): Markdown version of the API documentation.
+- [{{ site.title }} Online CV MCP Server & Agent Guide]({{ site.url }}{{ site.baseurl }}/mcp/): Model Context Protocol (MCP) configuration and agent integration instructions.
+- [{{ site.title }} Online CV MCP Guide (Markdown)]({{ site.url }}{{ site.baseurl }}/mcp/index.md): Markdown version of the MCP tool documentation.
+- [Sitemap]({{ site.url }}{{ site.baseurl }}/sitemap.xml): XML sitemap of all public pages and agent endpoints.
+
+## External Profiles
+
+- [GitHub (@{{ site.data.data.sidebar.github }})](https://github.com/{{ site.data.data.sidebar.github }}): Source repositories and open-source test automation work.
+- [LinkedIn ({{ site.data.data.sidebar.linkedin }})](https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}): Professional profile and work history.
+- [Stack Overflow](https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}): Developer Q&A profile.
+- [HackerRank (@{{ site.data.data.sidebar.hacker-rank }})](https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}): Coding challenges and certifications.

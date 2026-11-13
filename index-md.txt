@@ -1,0 +1,62 @@
+---
+layout: null
+permalink: /index.md
+---
+# {{ site.data.data.sidebar.name }} — {{ site.data.data.sidebar.tagline }}
+
+> {{ site.description | strip_newlines }}
+
+## Contact & Profiles
+
+- **Email**: [{{ site.data.data.sidebar.email }}](mailto:{{ site.data.data.sidebar.email }})
+- **Phone**: {{ site.data.data.sidebar.phone }}
+- **GitHub**: [https://github.com/{{ site.data.data.sidebar.github }}](https://github.com/{{ site.data.data.sidebar.github }})
+- **LinkedIn**: [https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}](https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }})
+- **Twitter**: [https://twitter.com/{{ site.data.data.sidebar.twitter }}](https://twitter.com/{{ site.data.data.sidebar.twitter }})
+- **Stack Overflow**: [https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}](https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }})
+- **HackerRank**: [https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}](https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }})
+{% for file in site.data.data.sidebar.files %}- **CV ({{ file.type }})**: [{{ site.url }}{{ site.baseurl }}/{{ file.path }}]({{ site.url }}{{ site.baseurl }}/{{ file.path }})
+{% endfor %}
+## {{ site.data.data.career-profile.title }}
+
+{{ site.data.data.career-profile.summary | strip }}
+
+## Experiences
+{% for exp in site.data.data.experiences %}
+### {{ exp.role }} — {{ exp.company }} ({{ exp.time }})
+{% if exp.projects %}
+**Projects:**
+{{ exp.projects | strip }}
+{% endif %}{% if exp.details %}
+{{ exp.details | strip }}
+{% endif %}{% if exp.techStack %}
+**TechStack:** {{ exp.techStack }}
+{% endif %}{% endfor %}
+## Skills & Proficiency
+{% for skill in site.data.data.skills.toolset %}
+- **{{ skill.name }}**: {{ skill.level }}{% endfor %}
+
+## Education
+{% for edu in site.data.data.education %}
+- **{{ edu.degree }}** — {{ edu.university }}{% endfor %}
+
+## Certificates
+{% for cert in site.data.data.certificates %}
+- {{ cert.title }}{% endfor %}
+
+## Languages
+{% for lang in site.data.data.sidebar.languages %}
+- **{{ lang.idiom }}**: {{ lang.level }}{% endfor %}
+
+## Interests
+{% for interest in site.data.data.interests %}
+- {{ interest.item }}{% endfor %}
+
+## Machine-Readable & Agent Endpoints
+
+- [LLMs Index (llms.txt)]({{ site.url }}{{ site.baseurl }}/llms.txt)
+- [Full LLM Context (llms-full.txt)]({{ site.url }}{{ site.baseurl }}/llms-full.txt)
+- [Structured CV JSON API]({{ site.url }}{{ site.baseurl }}/api/cv.json)
+- [API Documentation]({{ site.url }}{{ site.baseurl }}/docs/)
+- [MCP Server & Agent Guide]({{ site.url }}{{ site.baseurl }}/mcp/)
+- [XML Sitemap]({{ site.url }}{{ site.baseurl }}/sitemap.xml)

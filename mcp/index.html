@@ -1,0 +1,61 @@
+---
+layout: default
+title: "Michal Zak Online CV MCP Server & CLI Integration"
+description: "Model Context Protocol (MCP) server configuration and CLI usage guide for Michal Zak Online CV."
+permalink: /mcp/
+markdown_url: /mcp/index.md
+minimal_sidebar: true
+---
+
+<section class="section">
+  <h1 class="section-title">
+    <span class="fa-stack fa-xs">
+      <i class="fas fa-circle fa-stack-2x"></i>
+      <i class="fas fa-terminal fa-stack-1x fa-inverse"></i>
+    </span>
+    Michal Zak Online CV MCP Server &amp; CLI Integration
+  </h1>
+
+  <div class="summary">
+    <p>
+      Connect AI assistants (such as Claude Desktop, Cursor, or custom MCP clients) and CLI tools to
+      <strong>Michal Zak Online CV</strong> using the Model Context Protocol (MCP) or standard HTTP tools.
+    </p>
+
+    <h2>MCP Configuration (Fetch Server)</h2>
+    <p>
+      Any MCP-compatible client can read Michal Zak's CV using the official <code>@modelcontextprotocol/server-fetch</code>
+      or <code>mcp-server-fetch</code> tool pointed at the Markdown or JSON API endpoints:
+    </p>
+    <pre><code>{
+  "mcpServers": {
+    "online-cv-fetch": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"]
+    }
+  }
+}</code></pre>
+
+    <h2>Recommended Agent Target URLs</h2>
+    <ul>
+      <li><strong>LLMs Discovery:</strong> <code>{{ site.url }}{{ site.baseurl }}/llms.txt</code></li>
+      <li><strong>Full Context:</strong> <code>{{ site.url }}{{ site.baseurl }}/llms-full.txt</code></li>
+      <li><strong>Markdown CV:</strong> <code>{{ site.url }}{{ site.baseurl }}/index.md</code></li>
+      <li><strong>JSON API:</strong> <code>{{ site.url }}{{ site.baseurl }}/api/cv.json</code></li>
+    </ul>
+
+    <h2>CLI Usage Examples</h2>
+    <pre><code># Fetch Markdown CV
+curl -sS {{ site.url }}{{ site.baseurl }}/index.md
+
+# Query skills using curl and jq
+curl -sS {{ site.url }}{{ site.baseurl }}/api/cv.json | jq '.skills'</code></pre>
+
+    <h2>Related Links</h2>
+    <ul>
+      <li><a href="{{ site.baseurl }}/docs/">Michal Zak Online CV API Documentation</a></li>
+      <li><a href="{{ site.baseurl }}/">Online CV Homepage</a></li>
+      <li><a href="https://github.com/{{ site.data.data.sidebar.github }}/online-cv" target="_blank">GitHub Repository (zako05/online-cv)</a></li>
+    </ul>
+  </div>
+</section>
