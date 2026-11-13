@@ -2,3 +2,8 @@ name = "online-cv"
 main = "edge/cloudflare-worker.js"
 compatibility_date = "2025-01-01"
 workers_dev = true
+
+routes = [
+  { pattern = "zako05.dev", custom_domain = true },
+  { pattern = "www.zako05.dev", custom_domain = true }
+]

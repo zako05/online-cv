@@ -44,3 +44,4 @@ exclude:
   - scripts
   - test
   - wrangler.toml
+  - .wrangler
