@@ -2,6 +2,8 @@
 
 https://zako05.dev/online-cv
 
+> See [CLOUDFLARE_AND_GITHUB_PAGES.md](./CLOUDFLARE_AND_GITHUB_PAGES.md) for a detailed explanation of the Cloudflare Worker setup, CI/CD workflow, and how GitHub Pages & Jekyll work.
+
 ## Open CV locally
 
 ```bash

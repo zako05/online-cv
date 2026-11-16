@@ -38,6 +38,7 @@ exclude:
   - Gemfile.lock
   - LICENSE.txt
   - README.md
+  - CLOUDFLARE_AND_GITHUB_PAGES.md
   - vendor
   - tags
   - tags.lock
