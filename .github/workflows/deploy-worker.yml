@@ -18,10 +18,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
+
+      - name: Install Jekyll
+        run: gem install jekyll -v "~> 3.9.0" kramdown-parser-gfm --no-document
 
       - name: Build Jekyll site
-        run: bundle exec jekyll build
+        run: jekyll build
 
       - name: Run Agentic Readiness test suite
         run: ruby test/agentic_readiness_test.rb
