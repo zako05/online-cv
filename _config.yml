@@ -2,7 +2,7 @@
 
 # Site Settings
 title: Michal Zak
-url: 'https://zako05.github.io'
+url: 'https://zako05.dev'
 baseurl: '/online-cv' #change it according to your repository name
 description: Freelance Software Test Engineer with 8+ years of experiences in Software Development 
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
@@ -40,6 +40,8 @@ exclude:
   - README.md
   - vendor
   - tags
+  - tags.lock
+  - tags.temp
   - edge
   - scripts
   - test

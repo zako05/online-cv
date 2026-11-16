@@ -60,11 +60,11 @@
       {% if sidebar.files %}
         {% for file in files %}    
           {% if file.type == "PDF" %}
-            <a href="{{ file.path }}" class="fas fa-file-pdf" title="PDF" target="_blank"></a>
+            <a href="{{ site.baseurl }}/{{ file.path }}" class="fas fa-file-pdf" title="PDF" target="_blank"></a>
           {% elsif file.type == "MSWord" %}
-            <a href="{{ file.path }}" class="fas fa-file-word" title="MS Word"></a>
+            <a href="{{ site.baseurl }}/{{ file.path }}" class="fas fa-file-word" title="MS Word"></a>
           {% else %}
-            <a href="{{ file.path }}" class="fas fa-file-alt" title="Pages"></a>
+            <a href="{{ site.baseurl }}/{{ file.path }}" class="fas fa-file-alt" title="Pages"></a>
           {% endif %}
         {% endfor %}
       {% endif %}

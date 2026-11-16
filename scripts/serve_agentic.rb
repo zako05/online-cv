@@ -49,7 +49,14 @@ class AgenticApp
   def handle(method, raw_path, headers)
     accept = headers['accept'] || ''
     wants_md = prefers_markdown?(accept)
+    clean_raw = URI.decode_www_form_component(raw_path.split('?').first || '/')
     rel_path = normalize_path(raw_path)
+
+    if !wants_md && clean_raw == '/'
+      landing_file = File.join(@site_dir, 'landing.html')
+      landing_html = File.file?(landing_file) ? File.read(landing_file, encoding: 'UTF-8') : '<h1>Michal Zak</h1>'
+      return [200, 'OK', { 'Content-Type' => 'text/html; charset=utf-8', 'Vary' => 'Accept' }, method == 'HEAD' ? '' : landing_html]
+    end
 
     if wants_md
       md_candidate = case rel_path

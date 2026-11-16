@@ -1,0 +1,161 @@
+---
+layout: null
+permalink: /landing.html
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ site.data.data.sidebar.name }} | {{ site.data.data.sidebar.tagline }}</title>
+  <meta name="description" content="{{ site.description | strip_newlines }}">
+  {% assign skill_names = site.data.data.skills.toolset | map: "name" %}
+  <meta name="keywords" content="{{ site.data.data.sidebar.tagline }}, {{ skill_names | join: ', ' }}, {{ site.data.data.sidebar.name }}">
+  <meta name="author" content="{{ site.data.data.sidebar.name }}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ site.url }}/">
+  <meta property="og:site_name" content="{{ site.title }} Online CV">
+  <meta property="og:title" content="{{ site.data.data.sidebar.name }} | {{ site.data.data.sidebar.tagline }}">
+  <meta property="og:description" content="{{ site.description | strip_newlines }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}/">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png">
+  <link rel="alternate" type="text/markdown" href="{{ site.url }}{{ site.baseurl }}/index.md" title="Markdown version">
+  <link rel="alternate" type="text/plain" href="{{ site.url }}/llms.txt" title="LLMs.txt">
+  <link rel="alternate" type="application/json" href="{{ site.url }}/api/cv.json" title="Michal Zak Online CV API (JSON)">
+  <link rel="service-desc" type="application/openapi+json" href="{{ site.url }}/openapi.json" title="OpenAPI 3.0 Specification">
+  <link rel="help" href="{{ site.url }}{{ site.baseurl }}/docs/" title="Michal Zak Online CV API Documentation">
+  <link rel="sitemap" type="application/xml" href="{{ site.url }}/sitemap.xml" title="Sitemap">
+  <link rel="me" href="https://github.com/{{ site.data.data.sidebar.github }}">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon4.ico">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f5f5f5;
+      color: #3f4650;
+      text-align: center;
+    }
+    h1 { margin: 0 0 8px 0; font-size: 36px; font-weight: 700; }
+    h3 { margin: 0; font-size: 20px; font-weight: 400; color: #545e6c; }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfilePage",
+        "@id": "{{ site.url }}/#profilepage",
+        "url": "{{ site.url }}/",
+        "name": "{{ site.data.data.sidebar.name }} | {{ site.data.data.sidebar.tagline }}",
+        "description": "{{ site.description | strip_newlines }}",
+        "keywords": [
+          {{ site.data.data.sidebar.tagline | jsonify }}{% for skill in site.data.data.skills.toolset %},
+          {{ skill.name | jsonify }}{% endfor %}
+        ],
+        "mainEntity": { "@id": "{{ site.url }}/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "{{ site.data.data.sidebar.name }}",
+        "jobTitle": "{{ site.data.data.sidebar.tagline }}",
+        "description": "{{ site.description | strip_newlines }}",
+        "url": "{{ site.url }}{{ site.baseurl }}/",
+        "email": "mailto:{{ site.data.data.sidebar.email }}",
+        "telephone": "{{ site.data.data.sidebar.phone }}",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK" },
+        "knowsAbout": [
+          {{ site.data.data.sidebar.tagline | jsonify }}{% for skill in site.data.data.skills.toolset %},
+          {{ skill.name | jsonify }}{% endfor %}
+        ],
+        "sameAs": [
+          "https://github.com/{{ site.data.data.sidebar.github }}",
+          "https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}",
+          "https://twitter.com/{{ site.data.data.sidebar.twitter }}",
+          "https://stackoverflow.com/users/{{ site.data.data.sidebar.stack-overflow }}",
+          "https://www.hackerrank.com/{{ site.data.data.sidebar.hacker-rank }}"
+        ]
+      },
+      {
+        "@type": ["Organization", "ProfessionalService"],
+        "@id": "{{ site.url }}/#organization",
+        "name": "{{ site.data.data.sidebar.name }} - {{ site.data.data.sidebar.tagline }}",
+        "url": "{{ site.url }}/",
+        "logo": "{{ site.url }}{{ site.baseurl }}/assets/images/desktop.png",
+        "description": "{{ site.description | strip_newlines }}",
+        "email": "{{ site.data.data.sidebar.email }}",
+        "telephone": "{{ site.data.data.sidebar.phone }}",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bratislava", "addressCountry": "SK" },
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "{{ site.data.data.sidebar.email }}",
+            "telephone": "{{ site.data.data.sidebar.phone }}",
+            "url": "{{ site.url }}{{ site.baseurl }}/contact/",
+            "availableLanguage": ["English", "Czech", "Slovak"]
+          }
+        ],
+        "serviceType": {{ site.data.data.sidebar.tagline | jsonify }},
+        "keywords": "{{ site.data.data.sidebar.tagline }}, {{ skill_names | join: ', ' }}",
+        "knowsAbout": [
+          {{ site.data.data.sidebar.tagline | jsonify }}{% for skill in site.data.data.skills.toolset %},
+          {{ skill.name | jsonify }}{% endfor %}
+        ],
+        "sameAs": [
+          "https://github.com/{{ site.data.data.sidebar.github }}",
+          "https://linkedin.com/in/{{ site.data.data.sidebar.linkedin }}"
+        ],
+        "offers": [
+          {% for skill in site.data.data.skills.toolset limit: 4 %}{
+            "@type": "Offer",
+            "name": {{ skill.name | jsonify }}
+          }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>{{ site.data.data.sidebar.name }}</h1>
+    <h2 class="sr-only">Professional Profile</h2>
+    <h3>{{ site.data.data.sidebar.tagline }}</h3>
+    <div class="sr-only">
+      <p>{{ site.data.data.career-profile.summary | strip }}</p>
+      <nav aria-label="Primary Resources">
+        <a href="{{ site.baseurl }}/">Online CV</a>
+        <a href="{{ site.baseurl }}/docs/">Michal Zak Online CV API Documentation</a>
+        <a href="{{ site.baseurl }}/mcp/">Michal Zak Online CV MCP Server</a>
+        <a href="{{ site.baseurl }}/about/">About Michal Zak</a>
+        <a href="{{ site.baseurl }}/contact/">Contact Michal Zak</a>
+        <a href="{{ site.baseurl }}/privacy/">Privacy Policy</a>
+        <a href="{{ site.baseurl }}/api/cv.json">Online CV JSON API</a>
+        <a href="{{ site.baseurl }}/openapi.json">OpenAPI Specification</a>
+        <a href="{{ site.baseurl }}/llms.txt">LLMs.txt</a>
+        <a href="{{ site.baseurl }}/sitemap.xml">Sitemap</a>
+        <a href="https://github.com/{{ site.data.data.sidebar.github }}" rel="me">GitHub ({{ site.data.data.sidebar.github }})</a>
+      </nav>
+    </div>
+  </main>
+</body>
+</html>

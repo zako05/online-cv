@@ -1,8 +1,9 @@
 /**
- * Cloudflare Worker / Edge Middleware for Agentic Readiness
+ * Cloudflare Worker / Edge Middleware for zako05.dev
  *
- * Deploy with:
- *   npx wrangler deploy
+ * - Root `https://zako05.dev/` displays a minimal landing page (`<h1>Michal Zak</h1>` and `<h3>Senior Test Automation Engineer</h3>`)
+ *   while retaining structured metadata and Markdown content negotiation for AI agents.
+ * - `https://zako05.dev/online-cv` (and `/online-cv/*`) serves the full Online CV from GitHub Pages.
  */
 
 const ORIGIN = 'https://zako05.github.io';
@@ -91,15 +92,9 @@ function isTextContentType(contentType) {
 function rewriteUrlsForOrigin(text, requestOrigin) {
   let out = text;
   if (requestOrigin && requestOrigin !== ORIGIN) {
-    out = out
-      .replaceAll(ORIGIN_BASE_URL, requestOrigin)
-      .replaceAll(`href="${BASE_PATH}/`, 'href="/')
-      .replaceAll(`src="${BASE_PATH}/`, 'src="/');
+    out = out.replaceAll(ORIGIN_BASE_URL, `${requestOrigin}${BASE_PATH}`);
   }
-  // Ensure sequential heading hierarchy (H1 -> H2 -> H3 -> H4) on HTML pages
   out = out
-    .replace('<h3 class="tagline">', '<h2 class="tagline">')
-    .replace('</h3>\n    \n\n  </div><!--//profile-container-->', '</h2>\n    \n\n  </div><!--//profile-container-->')
     .replaceAll('<h3 class="tagline">', '<h2 class="tagline">')
     .replaceAll('<h5 class="certificate-title">', '<h3 class="certificate-title" style="font-size:14px;margin-top:0;margin-bottom:5px;">')
     .replaceAll('<h4 class="degree">', '<h3 class="degree">')
@@ -120,10 +115,10 @@ function jsonResponse(payload, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(payload, null, 2), { status, headers });
 }
 
-function jsonErrorResponse(status, code, error, message, resolution, path) {
+function jsonErrorResponse(status, code, error, message, resolution, path, origin) {
   return jsonResponse(
     {
-      type: 'https://online-cv.zako05.workers.dev/docs/#errors',
+      type: `${origin}/online-cv/docs/#errors`,
       title: error,
       error,
       code,
@@ -148,7 +143,7 @@ function buildOpenApiSpec(origin) {
       contact: {
         name: 'Michal Zak',
         email: 'zako05@gmail.com',
-        url: `${origin}/contact/`
+        url: `${origin}/online-cv/contact/`
       }
     },
     servers: [
@@ -481,7 +476,7 @@ async function handleMcpPost(request, origin) {
               mimeType: 'application/json'
             },
             {
-              uri: `${origin}/index.md`,
+              uri: `${origin}/online-cv/index.md`,
               name: 'Michal Zak Online CV (Markdown)',
               description: 'Clean Markdown representation of Michal Zak curriculum vitae.',
               mimeType: 'text/markdown'
@@ -615,7 +610,8 @@ export default {
           'Method Not Allowed',
           `HTTP ${request.method} is not supported on ${cleanPath}.`,
           'Use GET /api/cv.json to retrieve the curriculum vitae.',
-          url.pathname
+          url.pathname,
+          url.origin
         );
       }
       const section = url.searchParams.get('section') || 'all';
@@ -626,7 +622,8 @@ export default {
           'Invalid Query Parameter',
           `Unknown section "${section}".`,
           `Supply a valid section parameter: ${Array.from(VALID_SECTIONS).join(', ')}.`,
-          url.pathname
+          url.pathname,
+          url.origin
         );
       }
       const cvRes = await fetch(`${ORIGIN}${BASE_PATH}/api/cv.json`);
@@ -652,11 +649,12 @@ export default {
         'API Endpoint Not Found',
         `The API endpoint "${cleanPath}" does not exist.`,
         `Query GET ${url.origin}/api/cv.json or inspect the OpenAPI specification at ${url.origin}/openapi.json.`,
-        url.pathname
+        url.pathname,
+        url.origin
       );
     }
 
-    // 5. Markdown Content Negotiation
+    // 5. Markdown Content Negotiation (works on both `/` and `/online-cv/*`)
     if (wantsMarkdown) {
       const mdPath = resolveMarkdownPath(url.pathname);
       if (mdPath) {
@@ -674,7 +672,20 @@ export default {
       }
     }
 
-    // 6. Proxy to GitHub Pages Origin
+    // 6. Root Landing Page (`https://zako05.dev/` only — full CV is at `https://zako05.dev/online-cv`)
+    if (url.pathname === '/' || url.pathname === '') {
+      const landingRes = await fetch(`${ORIGIN}${BASE_PATH}/landing.html`);
+      const html = rewriteUrlsForOrigin(await landingRes.text(), url.origin);
+      return new Response(request.method === 'HEAD' ? null : html, {
+        status: 200,
+        headers: {
+          'Content-Type': 'text/html; charset=utf-8',
+          'Vary': 'Accept'
+        }
+      });
+    }
+
+    // 7. Proxy `/online-cv` and subpaths to GitHub Pages Origin
     const targetPath = toOriginPath(url.pathname);
     const originResponse = await fetch(`${ORIGIN}${targetPath}${url.search}`, {
       method: request.method,
@@ -693,7 +704,8 @@ export default {
           'Resource Not Found',
           `The requested path "${url.pathname}" does not exist on Michal Zak Online CV.`,
           `Refer to ${url.origin}/llms.txt, ${url.origin}/openapi.json, or ${url.origin}/sitemap.xml for valid endpoints.`,
-          url.pathname
+          url.pathname,
+          url.origin
         );
       }
       if (wantsMarkdown) {
