@@ -24,7 +24,7 @@ class AgenticReadinessTest < Minitest::Test
     end
     assert_includes content, 'Allow: /'
     refute_match(/Disallow:\s*\/\s*$/, content)
-    assert_includes content, 'Sitemap: https://zako05.github.io/online-cv/sitemap.xml'
+    assert_includes content, 'Sitemap: https://zako05.dev/online-cv/sitemap.xml'
   end
 
   def test_bot_user_agents_can_reach_homepage
@@ -54,9 +54,9 @@ class AgenticReadinessTest < Minitest::Test
     assert_includes headers_md['Vary'], 'Accept'
     assert_operator body_md.strip.length, :>=, 20
     assert_includes body_md, '# 404 Not Found'
-    assert_includes body_md, 'https://zako05.github.io/online-cv/llms.txt'
-    assert_includes body_md, 'https://zako05.github.io/online-cv/sitemap.xml'
-    assert_includes body_md, 'https://zako05.github.io/online-cv/docs/'
+    assert_includes body_md, 'https://zako05.dev/online-cv/llms.txt'
+    assert_includes body_md, 'https://zako05.dev/online-cv/sitemap.xml'
+    assert_includes body_md, 'https://zako05.dev/online-cv/docs/'
 
     status_html, _reason, headers_html, body_html = @app.handle(
       'GET',
@@ -151,9 +151,9 @@ class AgenticReadinessTest < Minitest::Test
     assert_match(/\A# Michal Zak - Senior Test Automation Engineer/, llms_txt)
     assert_includes llms_txt, '> Freelance Software Test Engineer'
     assert_includes llms_txt, '## When to Use This'
-    assert_includes llms_txt, 'https://zako05.github.io/online-cv/docs/'
-    assert_includes llms_txt, 'https://zako05.github.io/online-cv/mcp/'
-    assert_includes llms_txt, 'https://zako05.github.io/online-cv/api/cv.json'
+    assert_includes llms_txt, 'https://zako05.dev/online-cv/docs/'
+    assert_includes llms_txt, 'https://zako05.dev/online-cv/mcp/'
+    assert_includes llms_txt, 'https://zako05.dev/online-cv/api/cv.json'
     assert_includes llms_txt, 'https://github.com/zako05'
 
     # /sitemap.xml is valid XML and includes lastmod dates
@@ -163,14 +163,14 @@ class AgenticReadinessTest < Minitest::Test
     lastmods = []
     doc.elements.each('urlset/url/loc') { |el| locs << el.text }
     doc.elements.each('urlset/url/lastmod') { |el| lastmods << el.text }
-    assert_includes locs, 'https://zako05.github.io/online-cv/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/about/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/contact/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/privacy/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/docs/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/mcp/'
-    assert_includes locs, 'https://zako05.github.io/online-cv/llms.txt'
-    assert_includes locs, 'https://zako05.github.io/online-cv/api/cv.json'
+    assert_includes locs, 'https://zako05.dev/online-cv/'
+    assert_includes locs, 'https://zako05.dev/online-cv/about/'
+    assert_includes locs, 'https://zako05.dev/online-cv/contact/'
+    assert_includes locs, 'https://zako05.dev/online-cv/privacy/'
+    assert_includes locs, 'https://zako05.dev/online-cv/docs/'
+    assert_includes locs, 'https://zako05.dev/online-cv/mcp/'
+    assert_includes locs, 'https://zako05.dev/online-cv/llms.txt'
+    assert_includes locs, 'https://zako05.dev/online-cv/api/cv.json'
     assert_equal locs.length, lastmods.length
 
     # Trust anchor pages (/about/, /contact/, /privacy/) exist with >= 500 chars each
