@@ -26,7 +26,7 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-20261102.pdf
+        path: download_cv/CV-Michal-Zak-20261117.pdf
 
     languages:
       - idiom: English
@@ -202,6 +202,9 @@ skills:
       
       - name: Zsh / Vim
         level: 30%
+
+      - name: Antigravity CLI & custom Agent Skills
+        level: 60%
       
 # footer: >
 #     Designed with <i class="fas fa-heart"></i> by <a href="http://zakmichal.com" target="_blank" rel="nofollow">Michal Zak</a>
