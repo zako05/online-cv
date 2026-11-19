@@ -26,7 +26,7 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-20261117.pdf
+        path: download_cv/CV-Michal-Zak-20261119.pdf
 
     languages:
       - idiom: English
@@ -55,38 +55,38 @@ experiences:
       company: Trezor, Prague
       projects: |
         Trezor Suite (Open-source application for managing secure hardware wallets)
-        - Created Playwright E2E test suites focusing on core crypto processes like onboarding and passphrase handling
-        - Addressed CI test inconsistencies and Electron teardown delays in GitHub Actions pipelines
-        - Implemented automated testing for product analytics events and link validity checks
-      techStack: TS, Node.js, React, React Native, Playwright, WebSocket, Python, Git (GitHub Actions)
+        - Architected and maintained Playwright (TypeScript) E2E test suites using Page Object Model (POM) and custom fixtures for core crypto workflows (onboarding, passphrase handling)
+        - Eliminated CI test flakiness and Electron teardown delays in GitHub Actions pipelines
+        - Implemented automated testing for product analytics events and link validity checks using TypeScript, Python, and AI agentic CLI workflows (Antigravity CLI)
+      techStack: TypeScript, Node.js, React, React Native, Playwright, WebSocket, REST API, Python, Git (GitHub Actions), Antigravity CLI
     - role: Senior Test Automation Engineer
       time: Aug 2023 - Jun 2025
       company: Instea, Bratislava
       projects: |
         US Quick Online 1.0 & 2.0 (B2B web-based app to manage clinical supply chain logistics)
-        - Created and managed performance tests using K6 in JavaScript for both projects
+        - Designed and managed load and performance testing frameworks from scratch using Grafana K6 in JavaScript for both projects
 
         US Quick Dispatch Dashboard (Internal web-based app for dispatching international shipments)
-          - Implemented end-to-end (E2E) and API tests with Playwright in JavaScript
-          - Set up and optimized CI pipeline in Jenkins for efficient application testing
-      techStack: JS, Node.js, React, GraphQL, Git (GitHub/Bitbucket), MS Playwright, Grafana Labs K6, Docker, Jenkins
+          - Built end-to-end (E2E) and REST/GraphQL API test suites with Playwright, implementing parallel worker token-refresh synchronization to eliminate CI race conditions
+          - Set up and optimized Dockerized CI pipelines in Jenkins for efficient application testing
+      techStack: JavaScript/TypeScript, Node.js, React, REST & GraphQL, Git (GitHub/Bitbucket), MS Playwright, Grafana Labs K6, Docker, Jenkins
     - role: Senior Test Automation Engineer
       time: Jun 2023 - Jul 2023
       company: Vectary, Bratislava
       details: |
         (Online 3D design and augmented reality platform)
-        - Developed and maintained end-to-end and API tests with Cypress.io
+        - Developed and maintained end-to-end and REST/GraphQL API tests with Cypress.io
         - Configured and optimized CI pipeline in Bitbucket for application testing
-      techStack: JS/TS, GraphQL, Git (Bitbucket), Docker, Cypress.io
+      techStack: JavaScript/TypeScript, REST & GraphQL, Git (Bitbucket), Docker, Cypress.io
     - role: Senior Test Automation Engineer
       time: Jul 2021 - Dec 2022
       company: Vestberry, Bratislava
       details: |
         (B2B SaaS for VC portfolio management, providing data insights and automated reporting)
-        - Created automated testing framework with Cypress.io adhering to best practices
-        - Managed E2E/API tests using Cypress.io
+        - Architected automated testing framework from scratch with Cypress.io (Page Object Model) adhering to best practices
+        - Managed E2E and REST/GraphQL API tests with isolated PostgreSQL test data in Docker
         - Set up and managed CI pipeline in GitLab for efficient application testing
-      techStack: JS/TS, Node.js, React, Postgres, GraphQL, Git (GitLab), Docker, Cypress.io, Jest
+      techStack: JavaScript/TypeScript, Node.js, React, Postgres, REST & GraphQL, Git (GitLab), Docker, Cypress.io, Jest
     - role: Software Test Engineer
       time: Feb 2019 - Oct 2020
       company: Innovatrics, Bratislava
@@ -116,7 +116,7 @@ education:
 certificates:
     - title: ISTQB Certified Tester Foundation Level, License 297
 interests:
-    - item: Test Automation & JS
+    - item: Test Automation & JavaScript
     - item: Running
     - item: Traveling
     - item: Splitboarding
