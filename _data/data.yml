@@ -26,7 +26,7 @@ sidebar:
     tau: zakmichal
     files:
       - type: PDF
-        path: download_cv/CV-Michal-Zak-20261119.pdf
+        path: download_cv/CV-Michal-Zak-20261120.pdf
 
     languages:
       - idiom: English
@@ -56,9 +56,9 @@ experiences:
       projects: |
         Trezor Suite (Open-source application for managing secure hardware wallets)
         - Architected and maintained Playwright (TypeScript) E2E test suites using Page Object Model (POM) and custom fixtures for core crypto workflows (onboarding, passphrase handling)
-        - Eliminated CI test flakiness and Electron teardown delays in GitHub Actions pipelines
+        - Eliminated CI test flakiness and Electron teardown delays in GitHub Actions pipelines using Currents.dev
         - Implemented automated testing for product analytics events and link validity checks using TypeScript, Python, and AI agentic CLI workflows (Antigravity CLI)
-      techStack: TypeScript, Node.js, React, React Native, Playwright, WebSocket, REST API, Python, Git (GitHub Actions), Antigravity CLI
+      techStack: TypeScript, Node.js, React, React Native, Playwright, Currents.dev, WebSocket, REST API, Python, Git (GitHub Actions), Antigravity CLI
     - role: Senior Test Automation Engineer
       time: Aug 2023 - Jun 2025
       company: Instea, Bratislava
