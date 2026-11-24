@@ -3,8 +3,3 @@ account_id = "5b240bd601b2dd7711a894d07f2a84b8"
 main = "edge/cloudflare-worker.js"
 compatibility_date = "2025-01-01"
 workers_dev = false
-
-routes = [
-  { pattern = "zako05.dev", custom_domain = true },
-  { pattern = "www.zako05.dev", custom_domain = true }
-]
